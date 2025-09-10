@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA Simulator - Play GTA 6 Related Games Online</title>
+    <meta name="description" content="Experience the ultimate GTA style open world in this realistic simulator. Play GTA Simulator game online for free. No downloads required.">
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" as="style">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <!-- 配置Tailwind颜色方案 - 使用index.html的苹果风格配色 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0071e3', // 苹果蓝
+                        secondary: '#1d1d1f', // 苹果深灰
+                        accent: '#f5f5f7', // 苹果浅灰背景
+                        'apple-gray': '#86868b', // 苹果灰色文本
+                        'apple-light': '#f8f8ff', // 苹果浅色背景
+                    },
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .backdrop-blur {
+                backdrop-filter: blur(8px);
+            }
+            .game-container {
+                aspect-ratio: 16 / 9;
+                min-height: 400px;
+            }
+            .stable-layout {
+                contain: layout style;
+            }
+        }
+        
+        /* 防止布局跳动 */
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* iframe稳定样式 */
+        iframe {
+            border: none;
+            display: block;
+        }
+        
+        /* 加载状态样式 */
+        .loading-placeholder {
+            background: linear-gradient(90deg, #f5f5f7 25%, #e0e0e0 50%, #f5f5f7 75%);
+            background-size: 200% 100%;
+            animation: loading 2s infinite;
+        }
+        
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
+</head>
+<body class="bg-accent text-secondary font-sans min-h-screen">
+    <!-- 头部导航 -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-sm border-b border-gray-200 shadow-sm transition-all duration-300">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="../images/Gta6games网站图标.png" alt="GTA6games.net" class="h-8 w-8">
+                <a href="../index.html" class="text-xl font-semibold hover:text-primary transition-colors">GTA6Games.net</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="fullscreen-btn" class="flex items-center text-secondary hover:text-primary transition-colors">
+                    <i class="fa fa-expand mr-2"></i> Fullscreen
+                </button>
+                <a href="../index.html" class="flex items-center text-secondary hover:text-primary transition-colors">
+                    <i class="fa fa-gamepad mr-2"></i> Browse Games
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 游戏区域 -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="mb-6">
+            <h1 class="text-3xl md:text-4xl font-bold">GTA Simulator</h1>
+            <p class="text-apple-gray mt-2 max-w-3xl">Experience the ultimate GTA style open world in this realistic simulator.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- 游戏iframe -->
+            <div class="lg:col-span-2">
+                <div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-lg stable-layout">
+                    <div class="relative game-container">
+                        <div id="loading-indicator" class="absolute inset-0 loading-placeholder rounded-lg flex items-center justify-center">
+                            <div class="text-center">
+                                <i class="fa fa-spinner fa-spin text-4xl text-primary mb-4"></i>
+                                <p class="text-apple-gray">Loading Game...</p>
+                            </div>
+                        </div>
+                        <iframe id="game-iframe" src="https://www.onlinegames.io/games/2023/unity2/gta-simulator/index.html" title="GTA Simulator" class="w-full h-full opacity-0 transition-opacity duration-500" allowfullscreen="" loading="lazy" sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-top-navigation" onload="document.getElementById('loading-indicator').style.display='none'; this.style.opacity='1';">
+                        </iframe>
+                    </div>
+                </div>
+                
+                <div class="mt-6 bg-white p-6 rounded-xl border border-gray-200">
+                    <h2 class="text-2xl font-semibold mb-4">How to Play</h2>
+                    <div class="space-y-3 text-apple-gray">
+                        <div class="flex items-start">
+                            <span class="font-medium bg-primary text-white px-2 py-1 rounded mr-2 mt-1">•</span>
+                            <span>The whole story starts with Jackson texting you. He calls you to his side. You find his location on the small map and go to him. He found out that you are a shooter and will give you some missions. The mayor wants to sell the island they live on and for nothing. Someone has to stop this. Other parties are not in favor of the agreement either. They just kill. This is where you are needed.</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="font-medium bg-primary text-white px-2 py-1 rounded mr-2 mt-1">•</span>
+                            <span>You will need a lot of guns and bullets in this game. Get yourself a gun and bullets by clicking on the grocery cart icon in the upper right corner of the screen.</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="font-medium bg-primary text-white px-2 py-1 rounded mr-2 mt-1">•</span>
+                            <span>Throughout the game, Jackson will communicate with you and give you some tasks. He will introduce you to his acquaintances. When he contacts you, a text message will appear on the screen. You can move on to the following statement by clicking continue.</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="font-medium bg-primary text-white px-2 py-1 rounded mr-2 mt-1">•</span>
+                            <span>You will need to cover the island from end to end. Therefore, you need a car. You can use Jackson's garage or commandeer any vehicle you see on the road. But be careful; car drivers carry guns. And they can use it against you!</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="font-medium bg-primary text-white px-2 py-1 rounded mr-2 mt-1">•</span>
+                            <span>The places you will go will be marked on the map. You will see pink exclamation emoticons. Follow them!</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="font-medium bg-primary text-white px-2 py-1 rounded mr-2 mt-1">•</span>
+                            <span>If you can not see the signs clearly on the map, you can enlarge it by clicking. If you click on the place you want to go on the map, you will place a green mark. When you minimize the map, you can easily follow that sign.</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="font-medium bg-primary text-white px-2 py-1 rounded mr-2 mt-1">•</span>
+                            <span>As you complete the tasks in the game, you will level up, and each level will bring you more power.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 游戏信息和控制 -->
+            <div class="space-y-6">
+                <div class="bg-white p-6 rounded-xl border border-gray-200">
+                    <h2 class="text-2xl font-semibold mb-4">Controls</h2>
+                    <div class="space-y-3 text-apple-gray">
+                        <div class="flex items-start">
+                            <span class="font-medium bg-primary text-white px-2 py-1 rounded mr-2 mt-1">•</span>
+                            <span>WASD or the Arrow Keys: Move</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="font-medium bg-primary text-white px-2 py-1 rounded mr-2 mt-1">•</span>
+                            <span>Left Shift (or tap on the running image): Run Fast</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="font-medium bg-primary text-white px-2 py-1 rounded mr-2 mt-1">•</span>
+                            <span>E Key: Punch or Shoot</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="font-medium bg-primary text-white px-2 py-1 rounded mr-2 mt-1">•</span>
+                            <span>F Key: Enter a Car</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="font-medium bg-primary text-white px-2 py-1 rounded mr-2 mt-1">•</span>
+                            <span>Tap on the Aiming Icon: Punch and Kick</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="font-medium bg-primary text-white px-2 py-1 rounded mr-2 mt-1">•</span>
+                            <span>Tap on the Flying Kick Image: Give a Flying Kick</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="font-medium bg-primary text-white px-2 py-1 rounded mr-2 mt-1">•</span>
+                            <span>Tap on the Fist Icon: Change Your Weapons</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="font-medium bg-primary text-white px-2 py-1 rounded mr-2 mt-1">•</span>
+                            <span>Tap on the Grocery Cart Image: To Shopping</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="font-medium bg-primary text-white px-2 py-1 rounded mr-2 mt-1">•</span>
+                            <span>ESC Key: Menu</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Game Features section removed as per user request -->
+            </div>
+        </div>
+        
+        <!-- 相关游戏 -->
+        <div class="mt-12">
+            <h2 class="text-2xl font-semibold mb-6">You May Also Like</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" id="related-games">
+                <!-- 相关游戏将通过JavaScript动态加载 -->
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // 全屏功能
+        document.getElementById('fullscreen-btn').addEventListener('click', function() {
+            const elem = document.querySelector('.game-container');
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.webkitRequestFullscreen) { // Safari
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { // IE11
+                elem.msRequestFullscreen();
+            }
+        });
+        
+        // 加载相关游戏
+        fetch('../assets/games.json')
+            .then(response => response.json())
+            .then(games => {
+                const relatedGamesContainer = document.getElementById('related-games');
+                // 随机选择3个游戏作为相关游戏
+                const shuffled = games.sort(() => 0.5 - Math.random());
+                const selected = shuffled.slice(0, 3);
+                
+                selected.forEach(game => {
+                    const gameCard = document.createElement('div');
+                    gameCard.className = 'game-card bg-apple-light rounded-xl overflow-hidden game-card-shadow transition-all duration-300 transform hover:-translate-y-2';
+                    gameCard.innerHTML = `
+                        <a href="${game.id}.html" class="block">
+                            <div class="relative overflow-hidden">
+                                <img src="${game.coverImage}" alt="${game.title}" class="w-full h-48 object-cover transition-transform duration-500 hover:scale-110">
+                                <div class="absolute top-3 right-3 bg-primary text-white text-sm font-medium px-3 py-1 rounded-full">
+                                    Play Now
+                                </div>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-xl font-semibold mb-2">${game.title}</h3>
+                                <p class="text-apple-gray mb-4">${game.description}</p>
+                                <div class="flex items-center text-sm text-apple-gray">
+                                    <span class="flex items-center mr-4"><i class="fa fa-clock-o mr-1"></i> ${game.year}</span>
+                                    <span class="flex items-center"><i class="fa fa-gamepad mr-1"></i> ${game.engine}</span>
+                                </div>
+                            </div>
+                        </a>
+                    `;
+                    relatedGamesContainer.appendChild(gameCard);
+                });
+            })
+            .catch(error => console.error('Error loading related games:', error));
+    </script>
+</body>
+</html>
