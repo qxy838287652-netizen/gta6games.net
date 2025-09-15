@@ -10,6 +10,101 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* 顶部导航栏悬停效果 */
+header nav a {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+header nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 50%;
+  background-color: #0071e3;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+header nav a:hover {
+  color: #0071e3 !important;
+  transform: translateY(-1px);
+}
+
+header nav a:hover::after {
+  width: 100%;
+}
+
+/* 底部导航栏悬停效果 */
+footer a {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+footer a::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: #0071e3;
+  transition: all 0.3s ease;
+}
+
+footer a:hover {
+  color: #0071e3 !important;
+  transform: translateY(-1px);
+}
+
+footer a:hover::before {
+  width: 100%;
+}
+
+/* 导航栏按钮悬停效果 */
+header button {
+  transition: all 0.3s ease;
+}
+
+header button:hover {
+  color: #0071e3;
+  transform: scale(1.1);
+}
+
+/* 新闻卡片高亮效果 */
+.news-item {
+  transition: all 0.3s ease;
+}
+
+.news-item:hover {
+  box-shadow: 0 8px 25px rgba(0, 113, 227, 0.15);
+  transform: translateY(-2px);
+  background-color: #f8f9ff;
+}
+
+/* 英雄区域虚化背景 */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  background-image: url('../images/bg.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  filter: blur(4px) brightness(0.8);
+  z-index: -1;
+}
+
 /* 响应式设计 */
 @media (max-width: 768px) {
   .game-card {

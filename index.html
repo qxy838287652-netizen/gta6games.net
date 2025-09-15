@@ -80,19 +80,34 @@
         }
     </script>
     
-    <style type="text/tailwindcss">
-        @layer utilities {
-            .content-auto {
-                content-visibility: auto;
-            }
-            .game-card-shadow {
-                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            }
-            .game-card-shadow:hover {
-                box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-            }
-        }
-    </style>
+     <style type="text/tailwindcss">
+         @layer utilities {
+             .content-auto {
+                 content-visibility: auto;
+             }
+             .game-card-shadow {
+                 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+             }
+             .game-card-shadow:hover {
+                 box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+             }
+             .news-hidden {
+                 display: none !important;
+             }
+             .game-hidden {
+                 display: none !important;
+             }
+             /* 新闻卡片底部固定样式 */
+             .news-item {
+                 display: flex;
+                 flex-direction: column;
+                 height: 100%;
+             }
+             .news-item > div:last-child {
+                 margin-top: auto;
+             }
+         }
+     </style>
 </head>
 <body class="bg-accent text-secondary font-sans">
     <!-- 导航栏 -->
@@ -106,6 +121,7 @@
             <div class="hidden md:flex items-center space-x-8">
             <a href="/" class="font-medium text-primary hover:text-primary/80 transition-colors">Home</a>
             <a href="#games" class="font-medium hover:text-primary transition-colors">Games</a>
+            <a href="#news" class="font-medium hover:text-primary transition-colors">GTA6 News</a>
             <a href="#about" class="font-medium hover:text-primary transition-colors">About</a>
             <a href="#contact" class="font-medium hover:text-primary transition-colors">Contact</a>
         </div>
@@ -118,12 +134,12 @@
 
     <main>
         <!-- 英雄区域 -->
-        <section class="bg-gradient-to-b from-white to-accent py-16 md:py-24">
+        <section class="hero-section py-16 md:py-24" style="background: linear-gradient(to bottom, rgba(255,255,255,0.4), rgba(240,240,240,0.4)), url('./images/bg.png') center/cover;">
             <div class="container mx-auto px-4 text-center">
                 <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-6 leading-tight">
                     Play GTA 6 Related Games Online
                 </h1>
-                <p class="text-lg md:text-xl text-apple-gray max-w-3xl mx-auto mb-10">
+                <p class="text-lg md:text-xl text-white max-w-3xl mx-auto mb-10">
                     Enjoy the best collection of GTA 6 inspired games. Free to play, no download required.
                 </p>
                 <a href="#games" class="inline-block bg-primary hover:bg-primary/90 text-white font-medium py-3 px-8 rounded-full transition-all transform hover:scale-105">
@@ -225,6 +241,175 @@
                             </div>
                         </a>
                     </div>
+
+                    <!-- Real Flight Simulator -->
+                    <div class="game-card rounded-xl overflow-hidden game-card-shadow" style="background-image: url('./images/Real-Flight-Simulator-cover.png');">
+                        <a href="./games/real-flight-simulator.html" class="block h-full">
+                            <div class="relative overflow-hidden h-full flex items-center justify-center bg-black bg-opacity-30">
+                                <div class="text-center text-white p-4">
+                                    <h3 class="text-2xl font-bold mb-2">Real Flight Simulator</h3>
+                                    <div class="absolute top-3 right-3 bg-primary text-white text-sm font-medium px-3 py-1 rounded-full">
+                                        Play Now
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-xl font-semibold mb-2">Real Flight Simulator</h3>
+                                <p class="text-apple-gray mb-4">Experience realistic flight simulation with various aircraft and challenging missions.</p>
+                                <div class="flex items-center text-sm text-apple-gray">
+                                    <span class="flex items-center mr-4"><i class="fa fa-clock-o mr-1"></i> 2023</span>
+                                    <span class="flex items-center"><i class="fa fa-gamepad mr-1"></i> Unity</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Escape Car -->
+                    <div class="game-card rounded-xl overflow-hidden game-card-shadow" style="background-image: url('./images/Escape-Car-cover.png');">
+                        <a href="./games/escape-car.html" class="block h-full">
+                            <div class="relative overflow-hidden h-full flex items-center justify-center bg-black bg-opacity-30">
+                                <div class="text-center text-white p-4">
+                                    <h3 class="text-2xl font-bold mb-2">Escape Car</h3>
+                                    <div class="absolute top-3 right-3 bg-primary text-white text-sm font-medium px-3 py-1 rounded-full">
+                                        Play Now
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-xl font-semibold mb-2">Escape Car</h3>
+                                <p class="text-apple-gray mb-4">Escape from pursuing police cars in this intense high-speed chase game.</p>
+                                <div class="flex items-center text-sm text-apple-gray">
+                                    <span class="flex items-center mr-4"><i class="fa fa-clock-o mr-1"></i> 2022</span>
+                                    <span class="flex items-center"><i class="fa fa-gamepad mr-1"></i> Unity</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- ATV Highway Traffic -->
+                    <div class="game-card rounded-xl overflow-hidden game-card-shadow" style="background-image: url('./images/ATV-Highway-Traffic-cover.png');">
+                        <a href="./games/atv-highway-traffic.html" class="block h-full">
+                            <div class="relative overflow-hidden h-full flex items-center justify-center bg-black bg-opacity-30">
+                                <div class="text-center text-white p-4">
+                                    <h3 class="text-2xl font-bold mb-2">ATV Highway Traffic</h3>
+                                    <div class="absolute top-3 right-3 bg-primary text-white text-sm font-medium px-3 py-1 rounded-full">
+                                        Play Now
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-xl font-semibold mb-2">ATV Highway Traffic</h3>
+                                <p class="text-apple-gray mb-4">Navigate through busy highway traffic on your ATV in this thrilling racing game.</p>
+                                <div class="flex items-center text-sm text-apple-gray">
+                                    <span class="flex items-center mr-4"><i class="fa fa-clock-o mr-1"></i> 2022</span>
+                                    <span class="flex items-center"><i class="fa fa-gamepad mr-1"></i> Unity</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Storm City Mafia -->
+                    <div class="game-card rounded-xl overflow-hidden game-card-shadow" style="background-image: url('./images/Storm-City-Mafia-cover.png');">
+                        <a href="./games/storm-city-mafia.html" class="block h-full">
+                            <div class="relative overflow-hidden h-full flex items-center justify-center bg-black bg-opacity-30">
+                                <div class="text-center text-white p-4">
+                                    <h3 class="text-2xl font-bold mb-2">Storm City Mafia</h3>
+                                    <div class="absolute top-3 right-3 bg-primary text-white text-sm font-medium px-3 py-1 rounded-full">
+                                        Play Now
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-xl font-semibold mb-2">Storm City Mafia</h3>
+                                <p class="text-apple-gray mb-4">Join the mafia and complete 30 missions to defeat the Big Boss in Storm City.</p>
+                                <div class="flex items-center text-sm text-apple-gray">
+                                    <span class="flex items-center mr-4"><i class="fa fa-clock-o mr-1"></i> 2022</span>
+                                    <span class="flex items-center"><i class="fa fa-gamepad mr-1"></i> Unity</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <button id="view-more-games" class="inline-flex items-center bg-primary hover:bg-primary/90 text-white font-medium py-3 px-8 rounded-full transition-all transform hover:scale-105">
+                        View More Games <i class="fa fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- GTA6 新闻区域 -->
+        <section id="news" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-12 text-center">Latest GTA 6 News</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="news-container">
+                    <!-- News Card 1 - GTA 6 Delay -->
+                    <a href="news/gta6-delay-2026.html" class="block bg-accent rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 news-item">
+                        <h3 class="text-xl font-semibold mb-3">GTA 6 Officially Delayed to May 2026 - Rockstar Apologizes, Promises Uncompromising Quality</h3>
+                        <p class="text-apple-gray mb-4">Bad news for GTA fans - Rockstar has officially announced that GTA 6's release has been pushed back to May 26, 2026. The delay comes as the studio prioritizes polish and quality...</p>
+                        <div class="flex items-center justify-between text-sm text-apple-gray">
+                            <span class="flex items-center"><i class="fa fa-calendar mr-2"></i> Sep 15, 2025</span>
+                            <span class="flex items-center"><i class="fa fa-eye mr-1"></i> 0</span>
+                        </div>
+                    </a>
+                    
+                    <!-- News Card 2 - Dual Protagonists -->
+                    <a href="news/gta6-dual-protagonists.html" class="block bg-accent rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 news-item">
+                        <h3 class="text-xl font-semibold mb-3">GTA 6 Dual Protagonists Revealed: Jason & Lucia - The Ultimate Crime Duo</h3>
+                        <p class="text-apple-gray mb-4">Rockstar confirms GTA 6 will feature two playable protagonists - Jason Duval and Lucia Caminos. This dynamic duo promises to deliver the most immersive criminal experience yet...</p>
+                        <div class="flex items-center justify-between text-sm text-apple-gray">
+                            <span class="flex items-center"><i class="fa fa-calendar mr-2"></i> Sep 14, 2025</span>
+                            <span class="flex items-center"><i class="fa fa-eye mr-1"></i> 0</span>
+                        </div>
+                    </a>
+                    
+                    <!-- News Card 3 - 100 Player Online -->
+                    <a href="news/gta6-online-100players.html" class="block bg-accent rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 news-item">
+                        <h3 class="text-xl font-semibold mb-3">GTA 6 Online Confirmed: 100-Player Servers - The Largest Open World Multiplayer Ever</h3>
+                        <p class="text-apple-gray mb-4">Get ready for the ultimate online criminal experience! Rockstar confirms GTA 6 Online will support up to 100 players simultaneously in the same server, creating unprecedented chaos...</p>
+                        <div class="flex items-center justify-between text-sm text-apple-gray">
+                            <span class="flex items-center"><i class="fa fa-calendar mr-2"></i> Sep 13, 2025</span>
+                            <span class="flex items-center"><i class="fa fa-eye mr-1"></i> 0</span>
+                        </div>
+                    </a>
+                    
+                    <!-- News Card 4 - Vice City Return -->
+                    <a href="news/gta6-vice-city-return.html" class="block bg-accent rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 news-item">
+                        <h3 class="text-xl font-semibold mb-3">GTA 6 Returns to Vice City! Miami Vibes, Neon Nights & 80s Retro Aesthetics Confirmed</h3>
+                        <p class="text-apple-gray mb-4">Sun, sand, and neon lights! Rockstar confirms GTA 6 will return to the iconic Vice City setting, bringing back the Miami-inspired criminal paradise with stunning modern visuals...</p>
+                        <div class="flex items-center justify-between text-sm text-apple-gray">
+                            <span class="flex items-center"><i class="fa fa-calendar mr-2"></i> Sep 12, 2025</span>
+                            <span class="flex items-center"><i class="fa fa-eye mr-1"></i> 0</span>
+                        </div>
+                    </a>
+                    
+                    <!-- News Card 5 - Graphics Leak -->
+                    <a href="news/gta6-graphics-leak.html" class="block bg-accent rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 news-item">
+                        <h3 class="text-xl font-semibold mb-3">GTA 6 Gameplay Leak! Ray Tracing, 4K Textures & Physics Destruction Stun the Community</h3>
+                        <p class="text-apple-gray mb-4">An alleged GTA 6 gameplay video has surfaced online, showcasing stunning next-gen graphics with ray tracing, ultra-realistic physics, and breathtaking environmental details...</p>
+                        <div class="flex items-center justify-between text-sm text-apple-gray">
+                            <span class="flex items-center"><i class="fa fa-calendar mr-2"></i> Sep 11, 2025</span>
+                            <span class="flex items-center"><i class="fa fa-eye mr-1"></i> 0</span>
+                        </div>
+                    </a>
+                    
+                    <!-- News Card 6 - Preorder Bonus -->
+                    <a href="news/gta6-preorder-bonus.html" class="block bg-accent rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 news-item">
+                        <h3 class="text-xl font-semibold mb-3">GTA 6 Preorder Bonuses Revealed: Exclusive Vehicles, Weapon Skins, Properties & "Vice City Legends" DLC</h3>
+                        <p class="text-apple-gray mb-4">Rockstar has unveiled GTA 6's preorder bonuses, featuring exclusive supercars, custom weapon skins, luxury properties, and a mysterious "Vice City Legends" story expansion...</p>
+                        <div class="flex items-center justify-between text-sm text-apple-gray">
+                            <span class="flex items-center"><i class="fa fa-calendar mr-2"></i> Sep 10, 2025</span>
+                            <span class="flex items-center"><i class="fa fa-eye mr-1"></i> 0</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <button id="view-more-news" class="inline-flex items-center bg-primary hover:bg-primary/90 text-white font-medium py-3 px-8 rounded-full transition-all transform hover:scale-105">
+                        View All News <i class="fa fa-arrow-right ml-2"></i>
+                    </button>
                 </div>
             </div>
         </section>
@@ -297,6 +482,7 @@
                     <ul class="space-y-2 text-gray-400">
                         <li><a href="/" class="hover:text-primary transition-colors">Home</a></li>
                         <li><a href="#games" class="hover:text-primary transition-colors">Games</a></li>
+                        <li><a href="#news" class="hover:text-primary transition-colors">GTA6 News</a></li>
                         <li><a href="#about" class="hover:text-primary transition-colors">About</a></li>
                         <li><a href="#contact" class="hover:text-primary transition-colors">Contact</a></li>
                     </ul>
@@ -304,12 +490,16 @@
                 
                 <div>
                     <h4 class="text-lg font-medium mb-4">Games</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="games/gta-simulator.html" class="hover:text-primary transition-colors">GTA Simulator</a></li>
-                        <li><a href="games/police-chase-drifter.html" class="hover:text-primary transition-colors">Police Chase Drifter</a></li>
-                        <li><a href="games/mob-city.html" class="hover:text-primary transition-colors">Mob City</a></li>
-                        <li><a href="games/burnout-drift-hunter.html" class="hover:text-primary transition-colors">Burnout Drift Hunter</a></li>
-                    </ul>
+                    <div class="grid grid-cols-2 gap-x-6 gap-y-2 text-gray-400">
+                        <a href="games/gta-simulator.html" class="hover:text-primary transition-colors">GTA Simulator</a>
+                        <a href="games/police-chase-drifter.html" class="hover:text-primary transition-colors">Police Chase Drifter</a>
+                        <a href="games/mob-city.html" class="hover:text-primary transition-colors">Mob City</a>
+                        <a href="games/burnout-drift-hunter.html" class="hover:text-primary transition-colors">Burnout Drift Hunter</a>
+                        <a href="games/real-flight-simulator.html" class="hover:text-primary transition-colors">Real Flight Simulator</a>
+                        <a href="games/escape-car.html" class="hover:text-primary transition-colors">Escape Car</a>
+                        <a href="games/atv-highway-traffic.html" class="hover:text-primary transition-colors">ATV Highway Traffic</a>
+                        <a href="games/storm-city-mafia.html" class="hover:text-primary transition-colors">Storm City Mafia</a>
+                    </div>
                 </div>
                 
 
@@ -326,28 +516,161 @@
         </div>
     </footer>
 
-    <script>
-        // 导航栏滚动效果
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.classList.add('py-2');
-                header.classList.remove('py-4');
-            } else {
-                header.classList.add('py-4');
-                header.classList.remove('py-2');
+     <script src="js/news-counter.js"></script>
+     <script>
+         // 导航栏滚动效果
+         window.addEventListener('scroll', function() {
+             const header = document.querySelector('header');
+             if (window.scrollY > 50) {
+                 header.classList.add('py-2');
+                 header.classList.remove('py-4');
+             } else {
+                 header.classList.add('py-4');
+                 header.classList.remove('py-2');
+             }
+         });
+
+         // 平滑滚动
+         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+             anchor.addEventListener('click', function (e) {
+                 e.preventDefault();
+                 document.querySelector(this.getAttribute('href')).scrollIntoView({
+                     behavior: 'smooth'
+                 });
+             });
+         });
+
+         // 新闻分页功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const newsItems = document.querySelectorAll('.news-item');
+            const viewMoreButton = document.getElementById('view-more-news');
+            let visibleCount = 6; // 初始显示6条
+            const itemsPerPage = 6; // 每次展开6条
+
+            // 初始化隐藏超出6条的新闻
+            newsItems.forEach((item, index) => {
+                if (index >= visibleCount) {
+                    item.classList.add('news-hidden');
+                }
+            });
+
+            // 更新按钮文本
+            function updateButtonText() {
+                const hiddenCount = Array.from(newsItems).filter(item => 
+                    item.classList.contains('news-hidden')
+                ).length;
+                
+                if (hiddenCount === 0) {
+                    viewMoreButton.textContent = 'All News Loaded';
+                    viewMoreButton.disabled = true;
+                    viewMoreButton.classList.remove('bg-primary', 'hover:bg-primary/90');
+                    viewMoreButton.classList.add('bg-gray-400', 'cursor-not-allowed');
+                } else {
+                    viewMoreButton.innerHTML = `View ${Math.min(itemsPerPage, hiddenCount)} More News <i class="fa fa-arrow-right ml-2"></i>`;
+                }
             }
+
+            // 点击按钮展开更多新闻
+            viewMoreButton.addEventListener('click', function() {
+                const hiddenItems = Array.from(newsItems).filter(item => 
+                    item.classList.contains('news-hidden')
+                );
+                
+                // 显示下6条新闻
+                const itemsToShow = hiddenItems.slice(0, itemsPerPage);
+                itemsToShow.forEach(item => {
+                    item.classList.remove('news-hidden');
+                    // 添加淡入动画效果
+                    item.style.opacity = '0';
+                    item.style.transition = 'opacity 0.5s ease';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                    }, 10);
+                });
+
+                visibleCount += itemsToShow.length;
+                updateButtonText();
+
+                // 如果所有新闻都已显示，滚动到新闻区域底部
+                if (hiddenItems.length <= itemsPerPage) {
+                    setTimeout(() => {
+                        document.getElementById('news').scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'end' 
+                        });
+                    }, 500);
+                }
+            });
+
+            // 初始化按钮文本
+            updateButtonText();
         });
 
-        // 平滑滚动
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+        // 游戏分页功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const gameCards = document.querySelectorAll('#games-container > .game-card');
+            const viewMoreButton = document.getElementById('view-more-games');
+            let visibleCount = 8; // 初始显示8个游戏
+            const itemsPerPage = 4; // 每次展开4个游戏
+
+            // 初始化隐藏超出8个的游戏
+            gameCards.forEach((card, index) => {
+                if (index >= visibleCount) {
+                    card.classList.add('game-hidden');
+                }
             });
+
+            // 更新按钮文本
+            function updateGameButtonText() {
+                const hiddenCount = Array.from(gameCards).filter(card => 
+                    card.classList.contains('game-hidden')
+                ).length;
+                
+                if (hiddenCount === 0) {
+                    viewMoreButton.textContent = 'All Games Loaded';
+                    viewMoreButton.disabled = true;
+                    viewMoreButton.classList.remove('bg-primary', 'hover:bg-primary/90');
+                    viewMoreButton.classList.add('bg-gray-400', 'cursor-not-allowed');
+                } else {
+                    viewMoreButton.innerHTML = `View ${Math.min(itemsPerPage, hiddenCount)} More Games <i class="fa fa-arrow-right ml-2"></i>`;
+                }
+            }
+
+            // 点击按钮展开更多游戏
+            viewMoreButton.addEventListener('click', function() {
+                const hiddenItems = Array.from(gameCards).filter(card => 
+                    card.classList.contains('game-hidden')
+                );
+                
+                // 显示下4个游戏
+                const itemsToShow = hiddenItems.slice(0, itemsPerPage);
+                itemsToShow.forEach(card => {
+                    card.classList.remove('game-hidden');
+                    // 添加淡入动画效果
+                    card.style.opacity = '0';
+                    card.style.transition = 'opacity 0.5s ease';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                    }, 10);
+                });
+
+                visibleCount += itemsToShow.length;
+                updateGameButtonText();
+
+                // 如果所有游戏都已显示，滚动到游戏区域底部
+                if (hiddenItems.length <= itemsPerPage) {
+                    setTimeout(() => {
+                        document.getElementById('games').scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'end' 
+                        });
+                    }, 500);
+                }
+            });
+
+            // 初始化按钮文本
+            updateGameButtonText();
         });
-    </script>
+     </script>
 </body>
 </html>

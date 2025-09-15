@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Statistics - GTA6games.net Admin</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0071e3',
+                        secondary: '#1d1d1f',
+                        accent: '#f5f5f7',
+                        'apple-gray': '#86868b',
+                        'apple-light': '#f8f8ff',
+                    },
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-accent text-secondary font-sans">
+    <!-- 导航栏 -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-sm shadow-sm transition-all duration-300">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="../index.html" class="flex items-center space-x-2">
+                <img src="../images/Gta6games网站图标.png" alt="GTA6games.net" class="h-8 w-8">
+                <span class="text-xl font-semibold tracking-tight">GTA6games.net Admin</span>
+            </a>
+            
+            <div class="flex items-center space-x-4">
+                <a href="../index.html" class="font-medium text-primary hover:text-primary/80 transition-colors">Back to Site</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 统计内容 -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+            <h1 class="text-3xl font-bold text-gray-800 mb-8">News Click Statistics</h1>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <div class="bg-blue-50 p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold text-blue-800 mb-2">Total Clicks</h3>
+                    <p class="text-4xl font-bold text-blue-600" id="total-clicks">0</p>
+                </div>
+                
+                <div class="bg-green-50 p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold text-green-800 mb-2">Most Popular</h3>
+                    <p class="text-2xl font-bold text-green-600" id="most-popular">-</p>
+                </div>
+                
+                <div class="bg-purple-50 p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold text-purple-800 mb-2">Average Clicks</h3>
+                    <p class="text-4xl font-bold text-purple-600" id="average-clicks">0</p>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-xl mb-8">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">News Articles</h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="px-4 py-2 font-semibold text-gray-700">Article</th>
+                                <th class="px-4 py-2 font-semibold text-gray-700">Clicks</th>
+                                <th class="px-4 py-2 font-semibold text-gray-700">Last Updated</th>
+                            </tr>
+                        </thead>
+                        <tbody id="stats-table-body">
+                            <!-- 统计数据将在这里动态生成 -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="flex space-x-4">
+                <button id="refresh-stats" class="bg-primary hover:bg-primary/90 text-white font-medium py-2 px-6 rounded-lg transition-all">
+                    <i class="fa fa-refresh mr-2"></i>Refresh Stats
+                </button>
+                <button id="reset-stats" class="bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-6 rounded-lg transition-all">
+                    <i class="fa fa-trash mr-2"></i>Reset All Stats
+                </button>
+                <button id="export-stats" class="bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-6 rounded-lg transition-all">
+                    <i class="fa fa-download mr-2"></i>Export CSV
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/news-counter.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const stats = newsCounter.getAllStats();
+            updateStatsDisplay(stats);
+
+            // 刷新按钮
+            document.getElementById('refresh-stats').addEventListener('click', function() {
+                const updatedStats = newsCounter.getAllStats();
+                updateStatsDisplay(updatedStats);
+                
+                // 显示刷新成功提示
+                showNotification('Statistics refreshed successfully!', 'success');
+            });
+
+            // 重置按钮
+            document.getElementById('reset-stats').addEventListener('click', function() {
+                if (confirm('Are you sure you want to reset all statistics? This action cannot be undone.')) {
+                    newsCounter.resetAll();
+                    updateStatsDisplay({});
+                    showNotification('All statistics have been reset.', 'info');
+                }
+            });
+
+            // 导出按钮
+            document.getElementById('export-stats').addEventListener('click', function() {
+                const stats = newsCounter.getAllStats();
+                const csv = convertToCSV(stats);
+                downloadCSV(csv, 'gta6-news-stats.csv');
+                showNotification('Statistics exported successfully!', 'success');
+            });
+        });
+
+        function updateStatsDisplay(stats) {
+            const tableBody = document.getElementById('stats-table-body');
+            tableBody.innerHTML = '';
+
+            let totalClicks = 0;
+            let articleCount = 0;
+            let mostPopular = { title: '', clicks: 0 };
+
+            // 定义新闻标题映射
+            const newsTitles = {
+                'gta6-delay-2026.html': 'GTA 6 Delay to 2026',
+                'gta6-dual-protagonists.html': 'Dual Protagonists Revealed',
+                'gta6-online-100players.html': '100-Player Online Mode',
+                'gta6-vice-city-return.html': 'Return to Vice City',
+                'gta6-graphics-leak.html': 'Graphics Leak',
+                'gta6-preorder-bonus.html': 'Preorder Bonuses'
+            };
+
+            // 处理统计数据
+            Object.entries(stats).forEach(([filename, clicks]) => {
+                const title = newsTitles[filename] || filename;
+                totalClicks += clicks;
+                articleCount++;
+
+                if (clicks > mostPopular.clicks) {
+                    mostPopular = { title, clicks };
+                }
+
+                const row = document.createElement('tr');
+                row.className = 'border-b border-gray-200 hover:bg-gray-50';
+                row.innerHTML = `
+                    <td class="px-4 py-3 text-gray-700">${title}</td>
+                    <td class="px-4 py-3 font-semibold text-primary">${newsCounter.formatCount(clicks)}</td>
+                    <td class="px-4 py-3 text-sm text-gray-500">${new Date().toLocaleString()}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+
+            // 更新统计卡片
+            document.getElementById('total-clicks').textContent = newsCounter.formatCount(totalClicks);
+            document.getElementById('average-clicks').textContent = articleCount > 0 
+                ? newsCounter.formatCount(Math.round(totalClicks / articleCount)) 
+                : '0';
+            document.getElementById('most-popular').textContent = mostPopular.title 
+                ? `${mostPopular.title} (${newsCounter.formatCount(mostPopular.clicks)})` 
+                : 'No data';
+        }
+
+        function convertToCSV(stats) {
+            const newsTitles = {
+                'gta6-delay-2026.html': 'GTA 6 Delay to 2026',
+                'gta6-dual-protagonists.html': 'Dual Protagonists Revealed',
+                'gta6-online-100players.html': '100-Player Online Mode',
+                'gta6-vice-city-return.html': 'Return to Vice City',
+                'gta6-graphics-leak.html': 'Graphics Leak',
+                'gta6-preorder-bonus.html': 'Preorder Bonuses'
+            };
+
+            let csv = 'Article,Clicks,Last Updated\n';
+            Object.entries(stats).forEach(([filename, clicks]) => {
+                const title = newsTitles[filename] || filename;
+                csv += `"${title}",${clicks},"${new Date().toLocaleString()}"\n`;
+            });
+            return csv;
+        }
+
+        function downloadCSV(csv, filename) {
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+        }
+
+        function showNotification(message, type = 'info') {
+            // 简单的通知实现
+            const notification = document.createElement('div');
+            notification.className = `fixed top-4 right-4 px-6 py-3 rounded-lg shadow-lg text-white font-medium ${
+                type === 'success' ? 'bg-green-500' : 
+                type === 'error' ? 'bg-red-500' : 'bg-blue-500'
+            }`;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
