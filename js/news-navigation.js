@@ -59,14 +59,14 @@ class NewsNavigation {
     createNavigationHTML() {
         const { prev, next } = this.getAdjacentNews();
         
-        let html = '<div class="border-t border-gray-200 pt-8 mt-8">';
+        let html = '<div class="news-navigation border-t border-gray-200 pt-8 mt-8">';
         html += '<div class="flex flex-col md:flex-row justify-between gap-4">';
         
         // Previous article
         if (prev) {
-            html += `<div class="flex-1">`;
-            html += `<p class="text-sm text-gray-500 mb-2">Previous Article</p>`;
-            html += `<a href="${prev.url}" class="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">`;
+            html += `<div class="flex-1 nav-item bg-gray-50 hover:bg-gray-100 transition-smooth rounded-lg">`;
+            html += `<p class="text-sm text-gray-500 mb-2 nav-label">Previous Article</p>`;
+            html += `<a href="${prev.url}" class="block p-4">`;
             html += `<h4 class="font-medium text-gray-800 line-clamp-2">${prev.title}</h4>`;
             html += `<p class="text-xs text-gray-500 mt-1">${prev.date}</p>`;
             html += '</a></div>';
@@ -76,9 +76,9 @@ class NewsNavigation {
         
         // Next article
         if (next) {
-            html += `<div class="flex-1">`;
-            html += `<p class="text-sm text-gray-500 mb-2 text-right">Next Article</p>`;
-            html += `<a href="${next.url}" class="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors text-right">`;
+            html += `<div class="flex-1 nav-item bg-gray-50 hover:bg-gray-100 transition-smooth rounded-lg">`;
+            html += `<p class="text-sm text-gray-500 mb-2 text-right nav-label">Next Article</p>`;
+            html += `<a href="${next.url}" class="block p-4 text-right">`;
             html += `<h4 class="font-medium text-gray-800 line-clamp-2">${next.title}</h4>`;
             html += `<p class="text-xs text-gray-500 mt-1">${next.date}</p>`;
             html += '</a></div>';
@@ -106,6 +106,13 @@ class NewsNavigation {
         if (newsContent) {
             const navigationHTML = this.createNavigationHTML();
             newsContent.insertAdjacentHTML('afterend', navigationHTML);
+        } else {
+            // 如果找不到新闻内容容器，直接添加到文章末尾
+            const article = document.querySelector('article');
+            if (article) {
+                const navigationHTML = this.createNavigationHTML();
+                article.insertAdjacentHTML('beforeend', navigationHTML);
+            }
         }
         
         // 同步阅读量

@@ -55,11 +55,12 @@ class NewsCounter {
                 const newsKey = this.getNewsKey(link.href);
                 const count = clicks[newsKey] || 0;
                 
-                // 更新点击计数显示
+                // 更新点击计数显示 - 修复选择器问题
                 const eyeIcon = link.querySelector('.fa-eye');
                 if (eyeIcon) {
+                    // 找到包含数字的span元素
                     const countSpan = eyeIcon.nextElementSibling;
-                    if (countSpan && countSpan.textContent) {
+                    if (countSpan && countSpan.textContent !== undefined) {
                         // 格式化数字显示
                         const formattedCount = this.formatCount(count);
                         countSpan.textContent = formattedCount;
@@ -87,6 +88,22 @@ class NewsCounter {
     resetAll() {
         localStorage.removeItem(this.storageKey);
         this.updateClickCounts();
+    }
+
+    // 专门用于首页的初始化
+    initHomePage() {
+        // 立即更新阅读量显示
+        this.updateClickCounts();
+        
+        // 监听新闻链接点击
+        document.addEventListener('click', (e) => {
+            const newsLink = e.target.closest('a[href*="news/"]');
+            if (newsLink && newsLink.href.includes('.html')) {
+                this.incrementClick(newsLink.href);
+                // 点击后立即更新显示
+                setTimeout(() => this.updateClickCounts(), 100);
+            }
+        });
     }
 
     // 同步首页阅读量到新闻页面

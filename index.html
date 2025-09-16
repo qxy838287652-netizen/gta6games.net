@@ -626,6 +626,11 @@
                      desktopMenu.classList.toggle('space-y-4');
                  });
              }
+             
+             // 初始化首页新闻阅读量计数
+             if (typeof newsCounter !== 'undefined') {
+                 newsCounter.initHomePage();
+             }
          });
 
          // 游戏分页功能
