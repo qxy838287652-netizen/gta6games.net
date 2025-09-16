@@ -101,7 +101,7 @@ class NewsNavigation {
     // 初始化
     init() {
         // 添加上一篇下一篇导航 - 放在新闻内容的最后
-        const newsContent = document.querySelector('div.prose.max-w-none');
+        const newsContent = document.querySelector('div.prose.max-w-none') || document.querySelector('article');
         if (newsContent) {
             const navigationHTML = this.createNavigationHTML();
             newsContent.insertAdjacentHTML('afterend', navigationHTML);

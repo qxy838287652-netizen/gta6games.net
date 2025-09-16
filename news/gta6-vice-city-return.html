@@ -181,6 +181,26 @@
                     countSpan.textContent = newsCounter.formatCount(currentCount);
                 }
             }
+
+            // 移动端导航菜单切换
+            const mobileMenuButton = document.querySelector('button.md\\:hidden');
+            const desktopMenu = document.querySelector('.hidden.md\\:flex');
+            
+            if (mobileMenuButton && desktopMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    desktopMenu.classList.toggle('hidden');
+                    desktopMenu.classList.toggle('flex');
+                    desktopMenu.classList.toggle('flex-col');
+                    desktopMenu.classList.toggle('absolute');
+                    desktopMenu.classList.toggle('top-full');
+                    desktopMenu.classList.toggle('left-0');
+                    desktopMenu.classList.toggle('right-0');
+                    desktopMenu.classList.toggle('bg-white');
+                    desktopMenu.classList.toggle('shadow-lg');
+                    desktopMenu.classList.toggle('p-4');
+                    desktopMenu.classList.toggle('space-y-4');
+                });
+            }
         });
     </script>
 </body>
