@@ -96,13 +96,13 @@ class NewsCounter {
         const currentCount = this.getClickCount(currentUrl);
         
         // 更新页面上的阅读量显示
-        const eyeIcon = document.querySelector('.fa-eye');
-        if (eyeIcon) {
+        const eyeIcons = document.querySelectorAll('.fa-eye');
+        eyeIcons.forEach(eyeIcon => {
             const countSpan = eyeIcon.nextElementSibling;
             if (countSpan && countSpan.textContent) {
                 countSpan.textContent = this.formatCount(currentCount);
             }
-        }
+        });
         
         return currentCount;
     }

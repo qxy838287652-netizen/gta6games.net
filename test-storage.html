@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test LocalStorage</title>
+    <script src="js/news-counter.js"></script>
+</head>
+<body>
+    <h1>LocalStorage Test</h1>
+    <div id="storage-data"></div>
+    
+    <script>
+        // 显示localStorage中的数据
+        function showStorageData() {
+            const data = localStorage.getItem('gta6_news_clicks');
+            const display = document.getElementById('storage-data');
+            
+            if (data) {
+                display.innerHTML = '<h2>gta6_news_clicks data:</h2><pre>' + JSON.stringify(JSON.parse(data), null, 2) + '</pre>';
+            } else {
+                display.innerHTML = '<p>No gta6_news_clicks data found in localStorage</p>';
+            }
+        }
+        
+        // 页面加载时显示数据
+        document.addEventListener('DOMContentLoaded', showStorageData);
+    </script>
+</body>
+</html>

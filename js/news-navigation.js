@@ -102,6 +102,7 @@ class NewsNavigation {
     init() {
         // 添加上一篇下一篇导航 - 放在新闻内容的最后
         const newsContent = document.querySelector('div.prose.max-w-none') || document.querySelector('article');
+        
         if (newsContent) {
             const navigationHTML = this.createNavigationHTML();
             newsContent.insertAdjacentHTML('afterend', navigationHTML);
@@ -185,8 +186,8 @@ class NewsNavigation {
     }
 }
 
-// 页面加载时初始化
-document.addEventListener('DOMContentLoaded', function() {
+// 页面加载时初始化函数（供外部调用）
+function initializeNewsNavigation() {
     const newsNav = new NewsNavigation();
     newsNav.init();
-});
+}

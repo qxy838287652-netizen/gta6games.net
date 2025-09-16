@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test News Counter</title>
+    <script src="js/news-counter.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-card { border: 1px solid #ccc; padding: 15px; margin: 10px; border-radius: 5px; }
+        .success { color: green; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>News Counter Test</h1>
+    
+    <div class="test-card">
+        <h2>Test News Link</h2>
+        <a href="news/gta6-delay-2026.html" class="test-link">
+            GTA 6 Delay News
+            <span class="flex items-center"><i class="fa fa-eye mr-1"></i> <span class="count">0</span></span>
+        </a>
+        <button onclick="simulateClick()">Simulate Click</button>
+        <button onclick="checkCounter()">Check Counter</button>
+    </div>
+    
+    <div id="results"></div>
+    
+    <script>
+        function simulateClick() {
+            // 模拟点击新闻链接
+            const link = document.querySelector('.test-link');
+            const event = new MouseEvent('click', {
+                view: window,
+                bubbles: true,
+                cancelable: true
+            });
+            link.dispatchEvent(event);
+            
+            document.getElementById('results').innerHTML += 
+                '<p class="success">✓ Simulated click on news link</p>';
+        }
+        
+        function checkCounter() {
+            const clicks = newsCounter.getClicks();
+            const count = newsCounter.getClickCount('news/gta6-delay-2026.html');
+            
+            document.getElementById('results').innerHTML += 
+                `<p>Current clicks for gta6-delay-2026.html: <strong>${count}</strong></p>` +
+                `<pre>All data: ${JSON.stringify(clicks, null, 2)}</pre>`;
+        }
+        
+        // 页面加载时检查计数器
+        document.addEventListener('DOMContentLoaded', function() {
+            checkCounter();
+        });
+    </script>
+</body>
+</html>
