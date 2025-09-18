@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA 6 News Template - GTA6games.net</title>
+    <meta name="description" content="Latest GTA 6 news and updates from the official source.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0071e3',
+                        secondary: '#1d1d1f',
+                        accent: '#f5f5f7',
+                        'apple-gray': '#86868b',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* 导航栏按钮悬停效果 */
+        header button {
+            transition: all 0.3s ease;
+        }
+        
+        header button:hover {
+            color: #0071e3;
+            transform: scale(1.1);
+        }
+        
+        /* 引用块样式 */
+        blockquote {
+            border-left: 4px solid #0071e3;
+            background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+        }
+        
+        /* 列表样式 */
+        .feature-list li {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #0071e3;
+            font-weight: bold;
+        }
+        
+        /* 统计数字样式 */
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #0071e3;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+    </style>
+</head>
+<body class="bg-accent min-h-screen">
+    <!-- 导航栏 -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-sm shadow-sm transition-all duration-300">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="../index.html" class="flex items-center space-x-2">
+                <img src="../images/Gta6games网站图标.png" alt="GTA6games.net" class="h-8 w-8">
+                <span class="text-xl font-semibold tracking-tight">GTA6games.net</span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-8">
+            <a href="../index.html" class="font-medium text-primary hover:text-primary/80 transition-colors">Home</a>
+            <a href="../index.html#games" class="font-medium hover:text-primary transition-colors">Games & News</a>
+            <a href="../index.html#about" class="font-medium hover:text-primary transition-colors">About</a>
+            <a href="../index.html#contact" class="font-medium hover:text-primary transition-colors">Contact</a>
+        </div>
+            
+            <button class="md:hidden text-secondary text-xl">
+                <i class="fa fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- 新闻内容 -->
+    <main class="container mx-auto px-4 py-12">
+        <article class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+            <!-- 新闻头部 -->
+            <div class="p-12 border-b border-gray-100 text-center">
+                <h1 class="text-5xl font-bold text-gray-900 mb-6 leading-tight">新闻标题</h1>
+                <p class="text-2xl font-light text-gray-600 mb-8">新闻副标题</p>
+                
+                <div class="flex items-center justify-center space-x-6 text-sm text-gray-500">
+                    <span><i class="fa fa-calendar-alt mr-2"></i> September 17, 2025</span>
+                    <span><i class="fa fa-eye mr-2"></i> <span id="view-count">12,847</span> views</span>
+                    <span><i class="fa fa-clock mr-2"></i> 8 min read</span>
+                </div>
+            </div>
+            
+            <!-- 新闻正文 -->
+            <div class="p-12 prose prose-lg max-w-none">
+                <!-- 这里放置新闻内容 -->
+            </div>
+        </article>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div>
+                    <h3 class="text-lg font-semibold mb-6 text-gray-300">About GTA6games.net</h3>
+                    <p class="text-gray-400 leading-relaxed">Your ultimate source for all things GTA 6. Latest news, rumors, and official updates about the most anticipated game of the decade.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6 text-gray-300">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="../index.html" class="text-gray-400 hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="../index.html#games" class="text-gray-400 hover:text-primary transition-colors">Games</a></li>
+                        <li><a href="../index.html#news" class="text-gray-400 hover:text-primary transition-colors">News</a></li>
+                        <li><a href="../index.html#about" class="text-gray-400 hover:text-primary transition-colors">About</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6 text-gray-300">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary transition-colors group">
+                            <i class="fa-brands fa-twitter text-xl text-gray-300 group-hover:text-white"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary transition-colors group">
+                            <i class="fa-brands fa-facebook-f text-xl text-gray-300 group-hover:text-white"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary transition-colors group">
+                            <i class="fa-brands fa-instagram text-xl text-gray-300 group-hover:text-white"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary transition-colors group">
+                            <i class="fa-brands fa-youtube text-xl text-gray-300 group-hover:text-white"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6 text-gray-300">Stay Updated</h3>
+                    <p class="text-gray-400 mb-4">Get the latest GTA 6 news delivered to your inbox</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary text-white placeholder-gray-500">
+                        <button class="bg-primary px-6 py-3 rounded-r-lg hover:bg-blue-600 transition-colors font-medium">
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-500">&copy; 2025 GTA6games.net. All rights reserved. Grand Theft Auto and GTA are trademarks of Take-Two Interactive Software.</p>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script src="../js/news-counter.js"></script>
+    <script src="../js/news-navigation.js"></script>
+    <script>
+        // 页面加载时自动记录一次点击
+        document.addEventListener('DOMContentLoaded', function() {
+            newsCounter.incrementClick(window.location.href);
+            
+            // 更新当前页面的点击计数显示
+            const currentCount = newsCounter.getClickCount(window.location.href);
+            const eyeIcon = document.querySelector('.fa-eye');
+            if (eyeIcon) {
+                const countSpan = eyeIcon.nextElementSibling;
+                if (countSpan && countSpan.textContent) {
+                    countSpan.textContent = newsCounter.formatCount(currentCount);
+                }
+            }
+
+            // 移动端导航菜单切换
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                    
+                    // 切换汉堡菜单图标
+                    const icon = mobileMenuBtn.querySelector('i');
+                    if (icon.classList.contains('fa-bars')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            }
+            
+            // 点击菜单外区域关闭移动端菜单
+            document.addEventListener('click', function(event) {
+                if (mobileMenu && !mobileMenu.classList.contains('hidden') && 
+                    !mobileMenu.contains(event.target) && 
+                    event.target !== mobileMenuBtn && 
+                    !mobileMenuBtn.contains(event.target)) {
+                    mobileMenu.classList.add('hidden');
+                    const icon = mobileMenuBtn.querySelector('i');
+                    if (icon.classList.contains('fa-times')) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                }
+            });
+            
+            // 初始化新闻导航
+            initializeNewsNavigation();
+        });
+    </script>
+</body>
+</html>

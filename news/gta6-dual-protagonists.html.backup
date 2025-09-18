@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA 6 Dual Protagonist System Deep Dive: Jason & Lucia, the Most Revolutionary Crime Duo</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0071e3',
+                        secondary: '#1d1d1f',
+                        accent: '#f5f5f7',
+                        'apple-gray': '#86868b',
+                        'apple-light': '#f8f8ff',
+                    },
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-accent text-secondary font-sans">
+    <!-- 导航栏 -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-sm shadow-sm transition-all duration-300">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="../index.html" class="flex items-center space-x-2">
+                <img src="../images/Gta6games网站图标.png" alt="GTA6games.net" class="h-8 w-8">
+                <span class="text-xl font-semibold tracking-tight">GTA6games.net</span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="../index.html" class="font-medium text-primary hover:text-primary/80 transition-colors">Home</a>
+                <a href="../index.html#games" class="font-medium hover:text-primary transition-colors">Games</a>
+                <a href="../index.html#news" class="font-medium hover:text-primary transition-colors">GTA6 News</a>
+                <a href="../index.html#about" class="font-medium hover:text-primary transition-colors">About</a>
+                <a href="../index.html#contact" class="font-medium hover:text-primary transition-colors">Contact</a>
+            </div>
+            
+            <button class="md:hidden text-secondary text-xl">
+                <i class="fa fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- News Content -->
+    <main class="container mx-auto px-4 py-8">
+        <article class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+            <header class="mb-8">
+                <h1 class="text-3xl font-bold text-gray-800 mb-4">GTA 6 Dual Protagonist System Deep Dive: Jason & Lucia, the Most Revolutionary Crime Duo</h1>
+                <div class="flex items-center justify-between text-sm text-apple-gray">
+                    <span class="flex items-center"><i class="fa fa-calendar mr-2"></i> September 14, 2025</span>
+                    <span class="flex items-center"><i class="fa fa-eye mr-1"></i> 0</span>
+                </div>
+            </header>
+
+            <div class="prose max-w-none">
+                <p class="text-lg text-gray-700 mb-6">
+                    Who said GTA is only about lone wolves? Rockstar is going all-in this time! GTA 6 officially confirms the dual protagonist system, and Jason Duval & Lucia Caminos—this "Bonnie and Clyde of the crime world"—are about to revolutionize your open-world experience.
+                </p>
+
+
+
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">🎭 Character Backgrounds: Two Worlds, One Destiny</h2>
+                <p class="text-gray-700 mb-4">
+                    <strong>Jason Duval</strong>: A former military man raised among con artists, trying to clean up his past through service but ending up working for drug lords in the Leonida Islands. This man craving a simple life has everything changed when he meets Lucia.
+                </p>
+                <p class="text-gray-700 mb-6">
+                    <strong>Lucia Caminos</strong>: Her father taught her to fight before she could walk properly. Jailed for defending her family, she regained freedom by luck and vowed to only take the smart path. This freshly released woman is determined to control her own destiny and achieve the better life her mother dreamed of.
+                </p>
+
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">🔄 Gameplay Innovation: Real-time Switching + Cooperative Play</h2>
+                <p class="text-gray-700 mb-4">
+                    Unlike GTA 5's three-protagonist system, this dual protagonist design goes much deeper. Players can:
+                </p>
+                <ul class="list-disc list-inside text-gray-700 mb-4">
+                    <li>Switch characters in real-time for coordinated missions (one drives while the other shoots)</li>
+                    <li>Choose mission strategies based on each character's specialties</li>
+                    <li>Experience completely different story branches and ending variations</li>
+                </ul>
+                <p class="text-gray-700 mb-6">
+                    Internal test players revealed: "Jason excels at gunfights and driving, Lucia is better at stealth and social interactions. When they coordinate well, mission difficulty is literally cut in half!"
+                </p>
+
+                <div class="bg-blue-50 p-6 rounded-xl mb-6">
+                    <h3 class="text-xl font-semibold text-blue-800 mb-3">💡 Player Benefit: Double Skill Trees, Double Fun</h3>
+                    <p class="text-blue-700">
+                        Each protagonist has independent skill trees and attribute systems. Jason can upgrade combat and driving skills, while Lucia focuses on stealth and persuasion abilities. Want to perfect the game? You'll need to max out both characters!
+                    </p>
+                </div>
+
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">🎬 Narrative Breakthrough: Relationship System Affects Story</h2>
+                <p class="text-gray-700 mb-4">
+                    The most exciting addition is the "Partnership System." Jason and Lucia's interaction choices will affect:
+                </p>
+                <ul class="list-disc list-inside text-gray-700 mb-4">
+                    <li>Whether you get timely support from your partner during missions</li>
+                    <li>Unlocking of story branches and multiple endings</li>
+                    <li>Even cooperative bonuses in online mode</li>
+                </ul>
+                <p class="text-gray-700 mb-6">
+                    Translation: If you keep making Jason take the fall, Lucia might "accidentally" go missing at critical moments!
+                </p>
+
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">🤔 Industry Reaction: Innovation or Risk?</h2>
+                <p class="text-gray-700 mb-6">
+                    Game analyst Li Ming comments: "The dual protagonist design significantly enhances narrative depth, but it also demands more from players' attention allocation. Rockstar is betting that players will invest time to deeply understand both characters rather than focusing on just one."
+                </p>
+
+                <div class="border-t border-gray-200 pt-6 mt-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">💬 Community Discussion</h3>
+                    <p class="text-gray-600 mb-4">
+                        Who are you more excited to play as—Jason or Lucia? Is the dual protagonist system your cup of tea? Join the conversation in the comments!
+                    </p>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <p class="text-gray-700 mb-2">💡 Discussion Topics:</p>
+                        <ul class="list-disc list-inside text-gray-600">
+                            <li>What kind of relationship do you want between the two protagonists? Partners, lovers, or rivals?</li>
+                            <li>Predict which character's skill tree will be more practical</li>
+                            <li>If you could only complete the game with one protagonist, who would you choose?</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+
+    
+    <script src="../js/news-counter.js"></script>
+    <script src="../js/news-navigation.js"></script>
+    <script>
+        // 页面加载时自动记录一次点击
+        document.addEventListener('DOMContentLoaded', function() {
+            newsCounter.incrementClick(window.location.href);
+            
+            // 更新当前页面的点击计数显示
+            const currentCount = newsCounter.getClickCount(window.location.href);
+            const eyeIcon = document.querySelector('.fa-eye');
+            if (eyeIcon) {
+                const countSpan = eyeIcon.nextElementSibling;
+                if (countSpan && countSpan.textContent) {
+                    countSpan.textContent = newsCounter.formatCount(currentCount);
+                }
+            }
+
+            // 移动端导航菜单切换
+            const mobileMenuButton = document.querySelector('button.md\\:hidden');
+            const desktopMenu = document.querySelector('.hidden.md\\:flex');
+            
+            if (mobileMenuButton && desktopMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    desktopMenu.classList.toggle('hidden');
+                    desktopMenu.classList.toggle('flex');
+                    desktopMenu.classList.toggle('flex-col');
+                    desktopMenu.classList.toggle('absolute');
+                    desktopMenu.classList.toggle('top-full');
+                    desktopMenu.classList.toggle('left-0');
+                    desktopMenu.classList.toggle('right-0');
+                    desktopMenu.classList.toggle('bg-white');
+                    desktopMenu.classList.toggle('shadow-lg');
+                    desktopMenu.classList.toggle('p-4');
+                    desktopMenu.classList.toggle('space-y-4');
+                });
+            }
+            
+            // 初始化新闻导航
+            initializeNewsNavigation();
+        });
+    </script>
+</body>
+</html>

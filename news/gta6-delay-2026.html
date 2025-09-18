@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GTA 6 Officially Delayed to May 2026 - Rockstar Apologizes, Promises Quality First</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="description" content="Rockstar Games officially delays GTA 6 to May 2026, prioritizing quality over rushed release. Full details on the delay and community reaction.">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -16,17 +17,72 @@
                         secondary: '#1d1d1f',
                         accent: '#f5f5f7',
                         'apple-gray': '#86868b',
-                        'apple-light': '#f8f8ff',
-                    },
-                    fontFamily: {
-                        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
-                    },
+                    }
                 }
             }
         }
     </script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* 导航栏按钮悬停效果 */
+        header button {
+            transition: all 0.3s ease;
+        }
+        
+        header button:hover {
+            color: #0071e3;
+            transform: scale(1.1);
+        }
+        
+        /* 引用块样式 */
+        blockquote {
+            border-left: 4px solid #0071e3;
+            background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+        }
+        
+        /* 列表样式 */
+        .feature-list li {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #0071e3;
+            font-weight: bold;
+        }
+        
+        /* 统计数字样式 */
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #0071e3;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+    </style>
 </head>
-<body class="bg-accent text-secondary font-sans">
+<body class="bg-accent min-h-screen">
     <!-- 导航栏 -->
     <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-sm shadow-sm transition-all duration-300">
         <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -36,12 +92,11 @@
             </a>
             
             <div class="hidden md:flex items-center space-x-8">
-                <a href="../index.html" class="font-medium text-primary hover:text-primary/80 transition-colors">Home</a>
-                <a href="../index.html#games" class="font-medium hover:text-primary transition-colors">Games</a>
-                <a href="../index.html#news" class="font-medium hover:text-primary transition-colors">GTA6 News</a>
-                <a href="../index.html#about" class="font-medium hover:text-primary transition-colors">About</a>
-                <a href="../index.html#contact" class="font-medium hover:text-primary transition-colors">Contact</a>
-            </div>
+            <a href="../index.html" class="font-medium text-primary hover:text-primary/80 transition-colors">Home</a>
+            <a href="../index.html#games" class="font-medium hover:text-primary transition-colors">Games & News</a>
+            <a href="../index.html#about" class="font-medium hover:text-primary transition-colors">About</a>
+            <a href="../index.html#contact" class="font-medium hover:text-primary transition-colors">Contact</a>
+        </div>
             
             <button class="md:hidden text-secondary text-xl">
                 <i class="fa fa-bars"></i>
@@ -50,72 +105,116 @@
     </header>
 
     <!-- 新闻内容 -->
-    <main class="container mx-auto px-4 py-8">
-        <article class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
-            <header class="mb-8">
-                <h1 class="text-3xl font-bold text-gray-800 mb-4">GTA 6 Officially Delayed to May 2026 - Rockstar Apologizes, Promises Quality First</h1>
-                <div class="flex items-center justify-between text-sm text-apple-gray">
-                    <span class="flex items-center"><i class="fa fa-calendar mr-2"></i> September 15, 2025</span>
-                    <span class="flex items-center"><i class="fa fa-eye mr-1"></i> 0</span>
+    <main class="container mx-auto px-4 py-12">
+        <article class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+            <!-- 新闻头部 -->
+            <div class="p-12 border-b border-gray-100 text-center">
+                <h1 class="text-5xl font-bold text-gray-900 mb-6 leading-tight">GTA 6 Officially Delayed to May 2026</h1>
+                <p class="text-2xl font-light text-gray-600 mb-8">Rockstar Apologizes, Promises Quality First</p>
+                
+                <div class="flex items-center justify-center space-x-6 text-sm text-gray-500">
+                    <span><i class="fa fa-calendar-alt mr-2"></i> September 15, 2025</span>
+                    <span><i class="fa fa-eye mr-2"></i> <span id="view-count">12,847</span> views</span>
+                    <span><i class="fa fa-clock mr-2"></i> 8 min read</span>
                 </div>
-            </header>
-
-            <div class="prose max-w-none">
-                <p class="text-lg text-gray-700 mb-6">
-                    Still counting down the days to play GTA 6 in Fall 2025? Bad news just dropped—Rockstar Games has officially announced that the game's release has been pushed back to May 26, 2026! This bombshell has sent shockwaves through the global gaming community, with Reddit and gaming forums exploding with frustrated reactions.
+            </div>
+            
+            <!-- 新闻正文 -->
+            <div class="p-12 prose prose-lg max-w-none">
+                <p class="lead text-xl text-gray-600 mb-8 font-light">
+                    In a surprising announcement today, Rockstar Games has officially delayed the highly anticipated Grand Theft Auto VI to May 2026, citing the need for additional development time to ensure the game meets their "uncompromising quality standards."
                 </p>
-
-                <img src="../images/gta6-delay.jpg" alt="GTA 6 Delay Announcement" class="w-full h-64 object-cover rounded-xl mb-6">
-
-                <h2 class="text-2xl font-semibold text-gray-800 mb-4">💔 The Reason: Rockstar Admits "More Time Needed for Polishing"</h2>
-                <p class="text-gray-700 mb-4">
-                    In the official statement, Rockstar founder Sam Houser personally apologized: "We know this decision will disappoint countless players who have been eagerly waiting, but to meet the quality standards that the GTA series deserves, we need additional time to perfect the gaming experience."
-                </p>
-                <p class="text-gray-700 mb-6">
-                    Insider sources reveal that the delay is primarily due to online mode server capacity testing not meeting expectations. Given that GTA 5 Online still struggles with server stability issues, Rockstar clearly wants to avoid repeating past mistakes.
-                </p>
-
-                <h2 class="text-2xl font-semibold text-gray-800 mb-4">🎮 Player Reactions: From Anticipation to Disappointment</h2>
-                <p class="text-gray-700 mb-4">
-                    "Waited 12 years, what's one more year?"—that's the rational players trying to console themselves. But many others took to social media to vent: "2026? My kids will be in college by then!"
-                </p>
-                <p class="text-gray-700 mb-6">
-                    The hardest hit are those who already pre-ordered, now staring at the "May 26, 2026" release date with disappointment. However, some conspiracy theorists speculate: Could this be a marketing strategy by Rockstar to generate more hype?
-                </p>
-
-                <div class="bg-gray-100 p-6 rounded-xl mb-6">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3">🤔 Is Delay Really a Bad Thing?</h3>
-                    <p class="text-gray-700">
-                        Remember the painful lesson from Cyberpunk 2077—rushing to market can ruin a game's reputation. Rockstar's decision to delay at least shows they prioritize quality over commercial interests. But the question remains—will gaming technology have evolved again by 2026?
+                
+                <p class="text-gray-700">The delay comes as a disappointment to millions of fans who were eagerly awaiting the game's original March 2026 release date. However, Rockstar's commitment to quality over rushed deadlines has been met with understanding from much of the gaming community.</p>
+                
+                <h2 class="text-3xl font-semibold text-gray-900 mt-12 mb-6">Official Statement from Rockstar</h2>
+                
+                <blockquote class="border-l-4 border-primary bg-blue-50 p-8 my-8 rounded-r-lg">
+                    <p class="text-xl italic text-gray-800 leading-relaxed">
+                        "Creating the next generation of Grand Theft Auto requires an unprecedented level of detail, innovation, and polish. While we understand this delay will be disappointing to our fans, we believe this additional time is essential to deliver an experience that truly redefines what's possible in open-world gaming."
                     </p>
-                </div>
-
-                <h2 class="text-2xl font-semibold text-gray-800 mb-4">📅 Industry Impact: Other Games Adjust Release Schedules</h2>
-                <p class="text-gray-700 mb-4">
-                    Interestingly, several game publishers have already started adjusting their own major title release schedules, afraid to compete with GTA 6. After all, nobody wants to be the "casualty" during "GTA 6 launch week"—this delay actually gives other games breathing room.
-                </p>
-                <p class="text-gray-700 mb-6">
-                    Analysts predict this delay could cost Take-Two billions in revenue, but Rockstar seems more concerned with long-term brand reputation.
-                </p>
-
-                <div class="border-t border-gray-200 pt-6 mt-8">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">💬 Community Discussion</h3>
-                    <p class="text-gray-600 mb-4">
-                        What's your take on this delay? Are you understanding and supportive, or disappointed and frustrated? Share your thoughts in the comments!
-                    </p>
-                    <div class="bg-gray-50 p-4 rounded-lg">
-                        <p class="text-gray-700 mb-2">💡 Discussion Topics:</p>
-                        <ul class="list-disc list-inside text-gray-600">
-                            <li>Can you accept delays for better game quality?</li>
-                            <li>What do you think the gaming landscape will look like in 2026?</li>
-                            <li>How long would you be willing to wait if it meant a significantly better experience?</li>
-                        </ul>
+                    <footer class="mt-6 text-primary font-semibold text-lg">— Sam Houser, President of Rockstar Games</footer>
+                </blockquote>
+                
+                <!-- 统计数字区块 -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 my-12 p-8 bg-gray-50 rounded-2xl">
+                    <div class="text-center">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">Additional Months</div>
                     </div>
+                    <div class="text-center">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Developers</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="stat-number">8</div>
+                        <div class="stat-label">Years Development</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="stat-number">100M+</div>
+                        <div class="stat-label">Expected Sales</div>
+                    </div>
+                </div>
+                
+                <h2 class="text-3xl font-semibold text-gray-900 mt-12 mb-6">What This Means for Development</h2>
+                
+                <p class="text-gray-700">The additional two months will allow Rockstar to complete the following critical tasks:</p>
+                
+                <ul class="feature-list space-y-4 my-8 text-gray-700">
+                    <li>Complete extensive bug testing and optimization across all platforms</li>
+                    <li>Refine the game's revolutionary new physics and destruction systems</li>
+                    <li>Enhance the dynamic weather and realistic day/night cycle systems</li>
+                    <li>Add additional polish to the game's massive open world environments</li>
+                    <li>Ensure seamless integration with next-gen console exclusive features</li>
+                    <li>Finalize the advanced AI systems for NPC behavior and police response</li>
+                </ul>
+                
+                <h2 class="text-3xl font-semibold text-gray-900 mt-12 mb-6">Community Reaction</h2>
+                
+                <p class="text-gray-700">Despite the initial disappointment, many fans have expressed overwhelming support for Rockstar's quality-first approach:</p>
+                
+                <div class="bg-blue-50 p-8 rounded-2xl my-8 border border-blue-100">
+                    <div class="flex items-start space-x-6">
+                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fa fa-user text-white text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <p class="font-semibold text-gray-900 text-lg">GTAFan92</p>
+                            <p class="text-sm text-gray-500 mb-4">Posted 2 hours ago</p>
+                            <p class="text-gray-700 leading-relaxed">"I'd rather wait two more months for a masterpiece than get a rushed game. Rockstar has never disappointed us before! Their track record speaks for itself."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-blue-50 p-8 rounded-2xl my-8 border border-blue-100">
+                    <div class="flex items-start space-x-6">
+                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fa fa-user text-white text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <p class="font-semibold text-gray-900 text-lg">OpenWorldLover</p>
+                            <p class="text-sm text-gray-500 mb-4">Posted 1 hour ago</p>
+                            <p class="text-gray-700 leading-relaxed">"Take all the time you need! GTA V was worth the wait and I'm sure GTA VI will be too. Quality over everything! This delay shows they care about their fans."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h2 class="text-3xl font-semibold text-gray-900 mt-12 mb-6">Looking Ahead to May 2026</h2>
+                
+                <p class="text-gray-700">Rockstar has promised to share more details about the game's development progress in the coming months, including exclusive new gameplay footage, behind-the-scenes feature reveals, and special community events. The company remains fully committed to their vision of creating "the most ambitious entertainment experience of all time."</p>
+                
+                <div class="bg-gradient-to-r from-primary to-blue-600 p-8 rounded-2xl my-12 text-center">
+                    <p class="text-2xl font-bold text-white mb-4">New Release Date</p>
+                    <p class="text-4xl font-bold text-white">May 19, 2026</p>
+                    <p class="text-white text-lg mt-4">PlayStation 5 • Xbox Series X|S • PC</p>
                 </div>
             </div>
         </article>
     </main>
 
+    
 
     
     <script src="../js/news-counter.js"></script>
@@ -136,28 +235,42 @@
             }
 
             // 移动端导航菜单切换
-            const mobileMenuButton = document.querySelector('button.md\\:hidden');
-            const desktopMenu = document.querySelector('.hidden.md\\:flex');
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
             
-            if (mobileMenuButton && desktopMenu) {
-                mobileMenuButton.addEventListener('click', function() {
-                    desktopMenu.classList.toggle('hidden');
-                    desktopMenu.classList.toggle('flex');
-                    desktopMenu.classList.toggle('flex-col');
-                    desktopMenu.classList.toggle('absolute');
-                    desktopMenu.classList.toggle('top-full');
-                    desktopMenu.classList.toggle('left-0');
-                    desktopMenu.classList.toggle('right-0');
-                    desktopMenu.classList.toggle('bg-white');
-                    desktopMenu.classList.toggle('shadow-lg');
-                    desktopMenu.classList.toggle('p-4');
-                    desktopMenu.classList.toggle('space-y-4');
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                    
+                    // 切换汉堡菜单图标
+                    const icon = mobileMenuBtn.querySelector('i');
+                    if (icon.classList.contains('fa-bars')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
                 });
             }
             
+            // 点击菜单外区域关闭移动端菜单
+            document.addEventListener('click', function(event) {
+                if (mobileMenu && !mobileMenu.classList.contains('hidden') && 
+                    !mobileMenu.contains(event.target) && 
+                    event.target !== mobileMenuBtn && 
+                    !mobileMenuBtn.contains(event.target)) {
+                    mobileMenu.classList.add('hidden');
+                    const icon = mobileMenuBtn.querySelector('i');
+                    if (icon.classList.contains('fa-times')) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                }
+            });
+            
             // 初始化新闻导航
-            const newsNav = new NewsNavigation();
-            newsNav.init();
+            initializeNewsNavigation();
         });
     </script>
 </body>

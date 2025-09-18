@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA 6 Pre-Order Bonuses Revealed - Exclusive Content and Early Access for Loyal Fans</title>
+    <meta name="description" content="Details emerge about GTA 6 pre-order bonuses including exclusive vehicles, missions, and early access periods for different edition tiers.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0071e3',
+                        secondary: '#1d1d1f',
+                        accent: '#f5f5f7',
+                        'apple-gray': '#86868b',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* 导航栏按钮悬停效果 */
+        header button {
+            transition: all 0.3s ease;
+        }
+        
+        header button:hover {
+            color: #0071e3;
+            transform: scale(1.1);
+        }
+        
+        /* 引用块样式 */
+        blockquote {
+            border-left: 4px solid #0071e3;
+            background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+        }
+        
+        /* 列表样式 */
+        .feature-list li {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #0071e3;
+            font-weight: bold;
+        }
+        
+        /* 价格表格样式 */
+        .edition-table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 2rem 0;
+        }
+        
+        .edition-table th,
+        .edition-table td {
+            border: 1px solid #e5e7eb;
+            padding: 1rem;
+            text-align: left;
+        }
+        
+        .edition-table th {
+            background-color: #f9fafb;
+            font-weight: 600;
+        }
+        
+        .edition-table tr:hover {
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+<body class="bg-accent min-h-screen">
+    <!-- 导航栏 -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <a href="../index.html" class="flex items-center">
+                    <img src="../images/Gta6games网站图标.png" alt="GTA6games.net" class="h-8 w-8 mr-2">
+                    <span class="text-xl font-semibold">GTA6games.net</span>
+                </a>
+                
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <i class="fa fa-bars text-2xl"></i>
+                </button>
+                
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html" class="text-apple-gray hover:text-primary">Home</a>
+                    <a href="../index.html#games" class="text-apple-gray hover:text-primary">Games</a>
+                    <a href="../index.html#news" class="text-primary font-medium">News</a>
+                    <a href="../index.html#about" class="text-apple-gray hover:text-primary">About</a>
+                    <a href="../index.html#contact" class="text-apple-gray hover:text-primary">Contact</a>
+                </nav>
+            </div>
+            
+            <!-- 移动端导航菜单 -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white absolute top-full left-0 right-0 shadow-lg">
+                <div class="container mx-auto px-4 py-4 space-y-4">
+                    <a href="../index.html" class="block py-2 text-apple-gray hover:text-primary">Home</a>
+                    <a href="../index.html#games" class="block py-2 text-apple-gray hover:text-primary">Games</a>
+                    <a href="../index.html#news" class="block py-2 text-primary font-medium">News</a>
+                    <a href="../index.html#about" class="block py-2 text-apple-gray hover:text-primary">About</a>
+                    <a href="../index.html#contact" class="block py-2 text-apple-gray hover:text-primary">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 新闻内容 -->
+    <main class="container mx-auto px-4 py-12 max-w-4xl">
+        <article class="bg-white rounded-2xl shadow-sm p-8">
+            <!-- 新闻标题和元信息 -->
+            <div class="text-center mb-8">
+                <h1 class="text-[clamp(1.8rem,4vw,2.8rem)] font-bold mb-4">GTA 6 Pre-Order Bonuses Revealed - Exclusive Content and Early Access for Loyal Fans</h1>
+                <div class="flex items-center justify-center space-x-6 text-apple-gray">
+                    <span class="flex items-center"><i class="fa fa-calendar mr-2"></i> September 10, 2025</span>
+                    <span class="flex items-center"><i class="fa fa-eye mr-1"></i> <span id="view-count">0</span></span>
+                    <span class="flex items-center"><i class="fa fa-clock mr-2"></i> 8 min read</span>
+                </div>
+            </div>
+            
+
+            
+            <!-- 新闻正文 -->
+            <div class="prose max-w-none">
+                <p class="text-lg mb-6">
+                    Leaked retailer documents have revealed the complete lineup of pre-order bonuses for Grand Theft Auto 6, offering exclusive content and early access periods across multiple edition tiers. The pre-order program is designed to reward loyal fans while providing substantial value for early adopters.
+                </p>
+                
+                <p class="text-lg mb-6">
+                    Three distinct editions will be available: Standard Edition, Deluxe Edition, and Collector's Edition. Each tier offers progressively more exclusive content, with the Collector's Edition including physical merchandise and premium digital content not available through any other means.
+                </p>
+                
+                <blockquote class="border-l-4 border-primary pl-6 py-4 my-8 bg-accent rounded-r-xl">
+                    <p class="text-xl font-semibold text-secondary">"We want to reward our most dedicated fans with content that truly enhances their experience. These aren't just cosmetic items - they're meaningful additions that provide real gameplay value."</p>
+                    <cite class="block mt-2 text-apple-gray">- Rockstar Games Spokesperson</cite>
+                </blockquote>
+                
+                <h2 class="text-2xl font-semibold mb-4 mt-8">Edition Comparison</h2>
+                
+                <table class="edition-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Standard Edition</th>
+                            <th>Deluxe Edition</th>
+                            <th>Collector's Edition</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Price</td>
+                            <td>$69.99</td>
+                            <td>$99.99</td>
+                            <td>$199.99</td>
+                        </tr>
+                        <tr>
+                            <td>Early Access</td>
+                            <td>72 hours</td>
+                            <td>5 days</td>
+                            <td>7 days</td>
+                        </tr>
+                        <tr>
+                            <td>Exclusive Vehicles</td>
+                            <td>1 vehicle</td>
+                            <td>3 vehicles</td>
+                            <td>5 vehicles + special edition</td>
+                        </tr>
+                        <tr>
+                            <td>Bonus Missions</td>
+                            <td>-</td>
+                            <td>2 missions</td>
+                            <td>5 missions + storyline expansion</td>
+                        </tr>
+                        <tr>
+                            <td>Weapon Skins</td>
+                            <td>2 skins</td>
+                            <td>5 skins</td>
+                            <td>10 skins + golden weapons</td>
+                        </tr>
+                        <tr>
+                            <td>Character Outfits</td>
+                            <td>1 outfit</td>
+                            <td>3 outfits</td>
+                            <td>5 outfits + exclusive sets</td>
+                        </tr>
+                        <tr>
+                            <td>Physical Content</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>Statue, art book, map, soundtrack</td>
+                        </tr>
+                        <tr>
+                            <td>GTA Online Bonuses</td>
+                            <td>$500,000</td>
+                            <td>$1,000,000</td>
+                            <td>$2,000,000 + business boost</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h2 class="text-2xl font-semibold mb-4 mt-8">Exclusive Content Details</h2>
+                
+                <ul class="feature-list space-y-3 mb-8">
+                    <li><strong>Vice City Classic:</strong> 1980s sports car with unique handling characteristics</li>
+                    <li><strong>Ocean's Eleven Heist:</strong> Exclusive multi-part mission with high rewards</li>
+                    <li><strong>Neon Night Pack:</strong> 1980s-themed weapon skins and vehicle liveries</li>
+                    <li><strong>Miami Vice Outfits:</strong> Period-accurate clothing sets for both protagonists</li>
+                    <li><strong>Early Business Access:</strong> Head start on criminal enterprises in GTA Online</li>
+                </ul>
+                
+                <p class="text-lg mb-6">
+                    The early access periods are particularly significant, allowing players to experience the game before the official launch. This staggered approach is designed to manage server load while rewarding the most dedicated fans. Early access players will also have the opportunity to provide feedback that could influence day-one patches.
+                </p>
+                
+                <h2 class="text-2xl font-semibold mb-4 mt-8">Pre-Order Timeline</h2>
+                
+                <p class="text-lg mb-6">
+                    Pre-orders are expected to open in Q1 2026, approximately 6-9 months before the anticipated release window. Retailers will offer various payment plans, including deposit systems and full payment options. Digital pre-orders will be available through all major platforms including PlayStation, Xbox, and PC storefronts.
+                </p>
+                
+                <div class="bg-primary/10 p-6 rounded-xl mb-8">
+                    <h3 class="text-lg font-semibold mb-3 text-primary">Important Notes</h3>
+                    <ul class="space-y-2">
+                        <li>• Pre-order bonuses are exclusive and will not be available post-launch</li>
+                        <li>• Early access periods may vary by region and platform</li>
+                        <li>• Physical Collector's Edition quantities will be limited</li>
+                        <li>• All pre-orders include any announced delay protection</li>
+                        <li>• Bonuses are subject to change based on final development</li>
+                    </ul>
+                </div>
+                
+                <p class="text-lg mb-6">
+                    Rockstar has emphasized that while pre-order bonuses provide additional value, the core game experience will be complete and satisfying for all players regardless of edition. The bonuses are designed to enhance rather than essentialize the experience.
+                </p>
+                
+                <p class="text-lg">
+                    The reveal of these pre-order details has generated significant excitement among the GTA community, with many fans already planning their edition choices. The substantial early access periods and meaningful exclusive content represent Rockstar's commitment to rewarding player loyalty while delivering exceptional value.
+                </p>
+            </div>
+            
+
+        </article>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-secondary text-white py-12 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <img src="../images/Gta6games网站图标.png" alt="GTA6games.net" class="h-6 w-6 mr-2">
+                        GTA6games.net
+                    </h3>
+                    <p class="text-gray-400">The best place to play GTA 6 inspired games online for free.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="../index.html#games" class="text-gray-400 hover:text-white transition-colors">Games</a></li>
+                        <li><a href="../index.html#news" class="text-gray-400 hover:text-white transition-colors">News</a></li>
+                        <li><a href="../index.html#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="../privacy.html" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="../terms.html" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2025 GTA6games.net. All rights reserved. This website is not affiliated with Rockstar Games or Take-Two Interactive.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/news-counter.js"></script>
+    <script src="../js/news-navigation.js"></script>
+    
+    <script>
+        // 移动端菜单功能
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // 页面加载时初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 初始化阅读量计数器
+            if (typeof initializeViewCounter === 'function') {
+                initializeViewCounter('gta6-preorder-bonus.html');
+            }
+            
+            // 初始化新闻导航
+            if (typeof initializeNewsNavigation === 'function') {
+                initializeNewsNavigation();
+            }
+        });
+    </script>
+</body>
+</html>

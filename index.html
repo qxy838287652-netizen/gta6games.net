@@ -106,6 +106,32 @@
              .news-item > div:last-child {
                  margin-top: auto;
              }
+            /* 并排布局调整 */
+            .games-news-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+            
+            @media (max-width: 1024px) {
+                .games-news-grid {
+                    grid-template-columns: 1fr;
+                    gap: 1.5rem;
+                }
+            }
+            
+            /* 调整游戏卡片在并排布局中的尺寸 */
+            @media (min-width: 1024px) {
+                .games-side .game-card {
+                    min-height: 280px;
+                }
+            }
+            
+            /* 确保新闻项目在并排布局中的一致性 */
+            .news-side .news-item {
+                min-height: 140px;
+            }
+
          }
      </style>
 </head>
@@ -120,8 +146,7 @@
             
             <div class="hidden md:flex items-center space-x-8">
             <a href="/" class="font-medium text-primary hover:text-primary/80 transition-colors">Home</a>
-            <a href="#games" class="font-medium hover:text-primary transition-colors">Games</a>
-            <a href="#news" class="font-medium hover:text-primary transition-colors">GTA6 News</a>
+            <a href="#games" class="font-medium hover:text-primary transition-colors">Games & News</a>
             <a href="#about" class="font-medium hover:text-primary transition-colors">About</a>
             <a href="#contact" class="font-medium hover:text-primary transition-colors">Contact</a>
         </div>
@@ -149,11 +174,14 @@
         </section>
 
         <!-- 游戏列表区域 -->
+        
+        <!-- 游戏列表区域 -->
         <section id="games" class="py-16 bg-white">
             <div class="container mx-auto px-4">
                 <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-12 text-center">Our GTA 6 Games Collection</h2>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="games-container">
+                <!-- 游戏卡片网格 - 一行4个并居中 -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-center" id="games-container">
                     <!-- GTA Simulator -->
                     <div class="game-card rounded-xl overflow-hidden game-card-shadow" style="background-image: url('./images/gta-simulator-cover.jpg');">
                         <a href="./games/gta-simulator.html" class="block h-full">
@@ -166,8 +194,8 @@
                                 </div>
                             </div>
                             <div class="p-5">
-                                <h3 class="text-xl font-semibold mb-2">GTA Simulator</h3>
-                                <p class="text-apple-gray mb-4">Experience the ultimate GTA style open world in this realistic simulator.</p>
+                                <h3 class="text-lg font-semibold mb-2">GTA Simulator</h3>
+                                <p class="text-apple-gray text-sm mb-3">Experience the ultimate GTA style open world in this realistic simulator.</p>
                                 <div class="flex items-center text-sm text-apple-gray">
                                     <span class="flex items-center mr-4"><i class="fa fa-clock-o mr-1"></i> 2023</span>
                                     <span class="flex items-center"><i class="fa fa-gamepad mr-1"></i> Unity</span>
@@ -188,8 +216,8 @@
                                 </div>
                             </div>
                             <div class="p-5">
-                                <h3 class="text-xl font-semibold mb-2">Police Chase Drifter</h3>
-                                <p class="text-apple-gray mb-4">Escape the police in high-speed chases with amazing drift mechanics.</p>
+                                <h3 class="text-lg font-semibold mb-2">Police Chase Drifter</h3>
+                                <p class="text-apple-gray text-sm mb-3">Escape the police in high-speed chases with amazing drift mechanics.</p>
                                 <div class="flex items-center text-sm text-apple-gray">
                                     <span class="flex items-center mr-4"><i class="fa fa-clock-o mr-1"></i> 2021</span>
                                     <span class="flex items-center"><i class="fa fa-gamepad mr-1"></i> 3D</span>
@@ -210,8 +238,8 @@
                                 </div>
                             </div>
                             <div class="p-5">
-                                <h3 class="text-xl font-semibold mb-2">Mob City</h3>
-                                <p class="text-apple-gray mb-4">Build your criminal empire in this action-packed mob simulator.</p>
+                                <h3 class="text-lg font-semibold mb-2">Mob City</h3>
+                                <p class="text-apple-gray text-sm mb-3">Build your criminal empire in this action-packed mob simulator.</p>
                                 <div class="flex items-center text-sm text-apple-gray">
                                     <span class="flex items-center mr-4"><i class="fa fa-clock-o mr-1"></i> 2021</span>
                                     <span class="flex items-center"><i class="fa fa-gamepad mr-1"></i> Unity</span>
@@ -232,8 +260,8 @@
                                 </div>
                             </div>
                             <div class="p-5">
-                                <h3 class="text-xl font-semibold mb-2">Burnout Drift Hunter</h3>
-                                <p class="text-apple-gray mb-4">Perform amazing drifts and burnouts in this high-octane racing game.</p>
+                                <h3 class="text-lg font-semibold mb-2">Burnout Drift Hunter</h3>
+                                <p class="text-apple-gray text-sm mb-3">Perform amazing drifts and burnouts in this high-octane racing game.</p>
                                 <div class="flex items-center text-sm text-apple-gray">
                                     <span class="flex items-center mr-4"><i class="fa fa-clock-o mr-1"></i> 2022</span>
                                     <span class="flex items-center"><i class="fa fa-gamepad mr-1"></i> Unity</span>
@@ -254,8 +282,8 @@
                                 </div>
                             </div>
                             <div class="p-5">
-                                <h3 class="text-xl font-semibold mb-2">Real Flight Simulator</h3>
-                                <p class="text-apple-gray mb-4">Experience realistic flight simulation with various aircraft and challenging missions.</p>
+                                <h3 class="text-lg font-semibold mb-2">Real Flight Simulator</h3>
+                                <p class="text-apple-gray text-sm mb-3">Experience realistic flight simulation with various aircraft and challenging missions.</p>
                                 <div class="flex items-center text-sm text-apple-gray">
                                     <span class="flex items-center mr-4"><i class="fa fa-clock-o mr-1"></i> 2023</span>
                                     <span class="flex items-center"><i class="fa fa-gamepad mr-1"></i> Unity</span>
@@ -276,8 +304,8 @@
                                 </div>
                             </div>
                             <div class="p-5">
-                                <h3 class="text-xl font-semibold mb-2">Escape Car</h3>
-                                <p class="text-apple-gray mb-4">Escape from pursuing police cars in this intense high-speed chase game.</p>
+                                <h3 class="text-lg font-semibold mb-2">Escape Car</h3>
+                                <p class="text-apple-gray text-sm mb-3">Escape from pursuing police cars in this intense high-speed chase game.</p>
                                 <div class="flex items-center text-sm text-apple-gray">
                                     <span class="flex items-center mr-4"><i class="fa fa-clock-o mr-1"></i> 2022</span>
                                     <span class="flex items-center"><i class="fa fa-gamepad mr-1"></i> Unity</span>
@@ -298,8 +326,8 @@
                                 </div>
                             </div>
                             <div class="p-5">
-                                <h3 class="text-xl font-semibold mb-2">ATV Highway Traffic</h3>
-                                <p class="text-apple-gray mb-4">Navigate through busy highway traffic on your ATV in this thrilling racing game.</p>
+                                <h3 class="text-lg font-semibold mb-2">ATV Highway Traffic</h3>
+                                <p class="text-apple-gray text-sm mb-3">Navigate through busy highway traffic on your ATV in this thrilling racing game.</p>
                                 <div class="flex items-center text-sm text-apple-gray">
                                     <span class="flex items-center mr-4"><i class="fa fa-clock-o mr-1"></i> 2022</span>
                                     <span class="flex items-center"><i class="fa fa-gamepad mr-1"></i> Unity</span>
@@ -320,8 +348,8 @@
                                 </div>
                             </div>
                             <div class="p-5">
-                                <h3 class="text-xl font-semibold mb-2">Storm City Mafia</h3>
-                                <p class="text-apple-gray mb-4">Join the mafia and complete 30 missions to defeat the Big Boss in Storm City.</p>
+                                <h3 class="text-lg font-semibold mb-2">Storm City Mafia</h3>
+                                <p class="text-apple-gray text-sm mb-3">Join the mafia and complete 30 missions to defeat the Big Boss in Storm City.</p>
                                 <div class="flex items-center text-sm text-apple-gray">
                                     <span class="flex items-center mr-4"><i class="fa fa-clock-o mr-1"></i> 2022</span>
                                     <span class="flex items-center"><i class="fa fa-gamepad mr-1"></i> Unity</span>
@@ -331,77 +359,144 @@
                     </div>
                 </div>
                 
-                <div class="text-center mt-12">
-                    <button id="view-more-games" class="inline-flex items-center bg-primary hover:bg-primary/90 text-white font-medium py-3 px-8 rounded-full transition-all transform hover:scale-105">
+                <div class="text-center mt-8">
+                    <button id="view-more-games" class="inline-flex items-center bg-primary hover:bg-primary/90 text-white font-medium py-2 px-6 rounded-full transition-all transform hover:scale-105 text-sm">
                         View More Games <i class="fa fa-arrow-right ml-2"></i>
                     </button>
                 </div>
             </div>
         </section>
-
-        <!-- GTA6 新闻区域 -->
-        <section id="news" class="py-16 bg-white">
+        
+        <!-- 最新新闻区域 -->
+        <section id="news" class="py-16 bg-accent">
             <div class="container mx-auto px-4">
                 <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-12 text-center">Latest GTA 6 News</h2>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="news-container">
-                    <!-- News Card 1 - GTA 6 Delay -->
-                    <a href="news/gta6-delay-2026.html" class="block bg-accent rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 news-item">
-                        <h3 class="text-xl font-semibold mb-3">GTA 6 Officially Delayed to May 2026 - Rockstar Apologizes, Promises Uncompromising Quality</h3>
-                        <p class="text-apple-gray mb-4">Bad news for GTA fans - Rockstar has officially announced that GTA 6's release has been pushed back to May 26, 2026. The delay comes as the studio prioritizes polish and quality...</p>
-                        <div class="flex items-center justify-between text-sm text-apple-gray">
-                            <span class="flex items-center"><i class="fa fa-calendar mr-2"></i> Sep 15, 2025</span>
-                            <span class="flex items-center"><i class="fa fa-eye mr-1"></i> 0</span>
+                <!-- 新闻卡片网格 - 一行2个 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="news-container">
+                    <!-- News Item 1 - Further Delay -->
+                    <a href="news/gta6-further-delay-2026.html" class="block bg-accent rounded-xl p-6 hover:bg-accent/90 transition-all duration-300 news-item border-l-4 border-primary">
+                        <div class="flex items-start justify-between">
+                            <div class="flex-1">
+                                <h3 class="text-base font-semibold mb-2">GTA 6 May Face Further Delay to October 2026 - Industry Insider Suggests Holiday Release Strategy</h3>
+                                <p class="text-apple-gray text-xs mb-3">New rumors suggest GTA 6 could be pushed back to October 2026 to capitalize on holiday sales. Industry insider Tom Henderson cites strategic timing and technical considerations...</p>
+                            </div>
+                            <div class="ml-6 text-right text-xs text-apple-gray min-w-[100px]">
+                                <span class="flex items-center justify-end mb-1"><i class="fa fa-calendar mr-2"></i> September 18, 2025</span>
+                                <span class="flex items-center justify-end"><i class="fa fa-eye mr-1"></i> <span class="count">0</span></span>
+                            </div>
                         </div>
                     </a>
                     
-                    <!-- News Card 2 - Dual Protagonists -->
-                    <a href="news/gta6-dual-protagonists.html" class="block bg-accent rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 news-item">
-                        <h3 class="text-xl font-semibold mb-3">GTA 6 Dual Protagonists Revealed: Jason & Lucia - The Ultimate Crime Duo</h3>
-                        <p class="text-apple-gray mb-4">Rockstar confirms GTA 6 will feature two playable protagonists - Jason Duval and Lucia Caminos. This dynamic duo promises to deliver the most immersive criminal experience yet...</p>
-                        <div class="flex items-center justify-between text-sm text-apple-gray">
-                            <span class="flex items-center"><i class="fa fa-calendar mr-2"></i> Sep 14, 2025</span>
-                            <span class="flex items-center"><i class="fa fa-eye mr-1"></i> 0</span>
+                    <!-- News Item 2 - Largest Launch -->
+                    <a href="news/gta6-largest-launch.html" class="block bg-accent rounded-xl p-6 hover:bg-accent/90 transition-all duration-300 news-item border-l-4 border-primary">
+                        <div class="flex items-start justify-between">
+                            <div class="flex-1">
+                                <h3 class="text-base font-semibold mb-2">GTA 6 Aims for "Largest Launch in Gaming History" - Rockstar Confirms Ambitious Scale in Job Listing</h3>
+                                <p class="text-apple-gray text-xs mb-3">Rockstar's latest job posting declares GTA 6 will be "the largest launch in gaming history," suggesting unprecedented server capacity and global infrastructure preparation...</p>
+                            </div>
+                            <div class="ml-6 text-right text-xs text-apple-gray min-w-[100px]">
+                                <span class="flex items-center justify-end mb-1"><i class="fa fa-calendar mr-2"></i> September 17, 2025</span>
+                                <span class="flex items-center justify-end"><i class="fa fa-eye mr-1"></i> <span class="count">0</span></span>
+                            </div>
                         </div>
                     </a>
                     
-                    <!-- News Card 3 - 100 Player Online -->
-                    <a href="news/gta6-online-100players.html" class="block bg-accent rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 news-item">
-                        <h3 class="text-xl font-semibold mb-3">GTA 6 Online Confirmed: 100-Player Servers - The Largest Open World Multiplayer Ever</h3>
-                        <p class="text-apple-gray mb-4">Get ready for the ultimate online criminal experience! Rockstar confirms GTA 6 Online will support up to 100 players simultaneously in the same server, creating unprecedented chaos...</p>
-                        <div class="flex items-center justify-between text-sm text-apple-gray">
-                            <span class="flex items-center"><i class="fa fa-calendar mr-2"></i> Sep 13, 2025</span>
-                            <span class="flex items-center"><i class="fa fa-eye mr-1"></i> 0</span>
+                    <!-- News Item 3 - Advanced Destruction -->
+                    <a href="news/gta6-advanced-destruction.html" class="block bg-accent rounded-xl p-6 hover:bg-accent/90 transition-all duration-300 news-item border-l-4 border-primary">
+                        <div class="flex items-start justify-between">
+                            <div class="flex-1">
+                                <h3 class="text-base font-semibold mb-2">GTA 6 to Feature Revolutionary Advanced Environmental Destruction - 60% of Buildings Can Be Destroyed</h3>
+                                <p class="text-apple-gray text-xs mb-3">Insider information reveals GTA 6 will introduce groundbreaking destruction technology, with 60% of buildings destructible and advanced physics-based environmental interaction...</p>
+                            </div>
+                            <div class="ml-6 text-right text-xs text-apple-gray min-w-[100px]">
+                                <span class="flex items-center justify-end mb-1"><i class="fa fa-calendar mr-2"></i> September 16, 2025</span>
+                                <span class="flex items-center justify-end"><i class="fa fa-eye mr-1"></i> <span class="count">0</span></span>
+                            </div>
                         </div>
                     </a>
                     
-                    <!-- News Card 4 - Vice City Return -->
-                    <a href="news/gta6-vice-city-return.html" class="block bg-accent rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 news-item">
-                        <h3 class="text-xl font-semibold mb-3">GTA 6 Returns to Vice City! Miami Vibes, Neon Nights & 80s Retro Aesthetics Confirmed</h3>
-                        <p class="text-apple-gray mb-4">Sun, sand, and neon lights! Rockstar confirms GTA 6 will return to the iconic Vice City setting, bringing back the Miami-inspired criminal paradise with stunning modern visuals...</p>
-                        <div class="flex items-center justify-between text-sm text-apple-gray">
-                            <span class="flex items-center"><i class="fa fa-calendar mr-2"></i> Sep 12, 2025</span>
-                            <span class="flex items-center"><i class="fa fa-eye mr-1"></i> 0</span>
+                    <!-- News Item 4 - GTA 6 Delay -->
+                    <a href="news/gta6-delay-2026.html" class="block bg-accent rounded-xl p-6 hover:bg-accent/90 transition-all duration-300 news-item border-l-4 border-primary">
+                        <div class="flex items-start justify-between">
+                            <div class="flex-1">
+                                <h3 class="text-base font-semibold mb-2">GTA 6 Officially Delayed to May 2026 - Rockstar Apologizes, Promises Uncompromising Quality</h3>
+                                <p class="text-apple-gray text-xs mb-3">Bad news for GTA fans - Rockstar has officially announced that GTA 6's release has been pushed back to May 26, 2026. The delay comes as the studio prioritizes polish and quality...</p>
+                            </div>
+                            <div class="ml-6 text-right text-xs text-apple-gray min-w-[100px]">
+                                <span class="flex items-center justify-end mb-1"><i class="fa fa-calendar mr-2"></i> September 15, 2025</span>
+                                <span class="flex items-center justify-end"><i class="fa fa-eye mr-1"></i> <span class="count">0</span></span>
+                            </div>
                         </div>
                     </a>
                     
-                    <!-- News Card 5 - Graphics Leak -->
-                    <a href="news/gta6-graphics-leak.html" class="block bg-accent rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 news-item">
-                        <h3 class="text-xl font-semibold mb-3">GTA 6 Gameplay Leak! Ray Tracing, 4K Textures & Physics Destruction Stun the Community</h3>
-                        <p class="text-apple-gray mb-4">An alleged GTA 6 gameplay video has surfaced online, showcasing stunning next-gen graphics with ray tracing, ultra-realistic physics, and breathtaking environmental details...</p>
-                        <div class="flex items-center justify-between text-sm text-apple-gray">
-                            <span class="flex items-center"><i class="fa fa-calendar mr-2"></i> Sep 11, 2025</span>
-                            <span class="flex items-center"><i class="fa fa-eye mr-1"></i> 0</span>
+                    <!-- News Item 5 - Dual Protagonists -->
+                    <a href="news/gta6-dual-protagonists.html" class="block bg-accent rounded-xl p-6 hover:bg-accent/90 transition-all duration-300 news-item border-l-4 border-primary">
+                        <div class="flex items-start justify-between">
+                            <div class="flex-1">
+                                <h3 class="text-base font-semibold mb-2">GTA 6 Dual Protagonists Revealed: Jason & Lucia - The Ultimate Crime Duo</h3>
+                                <p class="text-apple-gray text-xs mb-3">Rockstar confirms GTA 6 will feature two playable protagonists - Jason Duval and Lucia Caminos. This dynamic duo promises to deliver the most immersive criminal experience yet...</p>
+                            </div>
+                            <div class="ml-6 text-right text-xs text-apple-gray min-w-[100px]">
+                                <span class="flex items-center justify-end mb-1"><i class="fa fa-calendar mr-2"></i> September 14, 2025</span>
+                                <span class="flex items-center justify-end"><i class="fa fa-eye mr-1"></i> <span class="count">0</span></span>
+                            </div>
                         </div>
                     </a>
                     
-                    <!-- News Card 6 - Preorder Bonus -->
-                    <a href="news/gta6-preorder-bonus.html" class="block bg-accent rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 news-item">
-                        <h3 class="text-xl font-semibold mb-3">GTA 6 Preorder Bonuses Revealed: Exclusive Vehicles, Weapon Skins, Properties & "Vice City Legends" DLC</h3>
-                        <p class="text-apple-gray mb-4">Rockstar has unveiled GTA 6's preorder bonuses, featuring exclusive supercars, custom weapon skins, luxury properties, and a mysterious "Vice City Legends" story expansion...</p>
-                        <div class="flex items-center justify-between text-sm text-apple-gray">
-                            <span class="flex items-center"><i class="fa fa-calendar mr-2"></i> Sep 10, 2025</span>
-                            <span class="flex items-center"><i class="fa fa-eye mr-1"></i> 0</span>
+                    <!-- News Item 6 - 100 Player Online -->
+                    <a href="news/gta6-online-100players.html" class="block bg-accent rounded-xl p-6 hover:bg-accent/90 transition-all duration-300 news-item border-l-4 border-primary">
+                        <div class="flex items-start justify-between">
+                            <div class="flex-1">
+                                <h3 class="text-base font-semibold mb-2">GTA 6 Online Confirmed: 100-Player Servers - The Largest Open World Multiplayer Ever</h3>
+                                <p class="text-apple-gray text-xs mb-3">Get ready for the ultimate online criminal experience! Rockstar confirms GTA 6 Online will support up to 100 players simultaneously in the same server, creating unprecedented chaos...</p>
+                            </div>
+                            <div class="ml-6 text-right text-xs text-apple-gray min-w-[100px]">
+                                <span class="flex items-center justify-end mb-1"><i class="fa fa-calendar mr-2"></i> September 13, 2025</span>
+                                <span class="flex items-center justify-end"><i class="fa fa-eye mr-1"></i> <span class="count">0</span></span>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- News Item 7 - Vice City Return -->
+                    <a href="news/gta6-vice-city-return.html" class="block bg-accent rounded-xl p-6 hover:bg-accent/90 transition-all duration-300 news-item border-l-4 border-primary">
+                        <div class="flex items-start justify-between">
+                            <div class="flex-1">
+                                <h3 class="text-base font-semibold mb-2">GTA 6 Returns to Vice City! Miami Vibes, Neon Nights & 80s Retro Aesthetics Confirmed</h3>
+                                <p class="text-apple-gray text-xs mb-3">Sun, sand, and neon lights! Rockstar confirms GTA 6 will return to the iconic Vice City setting, bringing back the Miami-inspired criminal paradise with stunning modern visuals...</p>
+                            </div>
+                            <div class="ml-6 text-right text-xs text-apple-gray min-w-[100px]">
+                                <span class="flex items-center justify-end mb-1"><i class="fa fa-calendar mr-2"></i> September 12, 2025</span>
+                                <span class="flex items-center justify-end"><i class="fa fa-eye mr-1"></i> <span class="count">0</span></span>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- News Item 8 - Graphics Leak -->
+                    <a href="news/gta6-graphics-leak.html" class="block bg-accent rounded-xl p-6 hover:bg-accent/90 transition-all duration-300 news-item border-l-4 border-primary">
+                        <div class="flex items-start justify-between">
+                            <div class="flex-1">
+                                <h3 class="text-base font-semibold mb-2">GTA 6 Gameplay Leak! Ray Tracing, 4K Textures & Physics Destruction Stun the Community</h3>
+                                <p class="text-apple-gray text-xs mb-3">An alleged GTA 6 gameplay video has surfaced online, showcasing stunning next-gen graphics with ray tracing, ultra-realistic physics, and breathtaking environmental details...</p>
+                            </div>
+                            <div class="ml-6 text-right text-xs text-apple-gray min-w-[100px]">
+                                <span class="flex items-center justify-end mb-1"><i class="fa fa-calendar mr-2"></i> September 11, 2025</span>
+                                <span class="flex items-center justify-end"><i class="fa fa-eye mr-1"></i> <span class="count">0</span></span>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- News Item 9 - Preorder Bonus -->
+                    <a href="news/gta6-preorder-bonus.html" class="block bg-accent rounded-xl p-6 hover:bg-accent/90 transition-all duration-300 news-item border-l-4 border-primary">
+                        <div class="flex items-start justify-between">
+                            <div class="flex-1">
+                                <h3 class="text-base font-semibold mb-2">GTA 6 Preorder Bonuses Revealed: Exclusive Vehicles, Weapon Skins, Properties & "Vice City Legends" DLC</h3>
+                                <p class="text-apple-gray text-xs mb-3">Rockstar has unveiled GTA 6's preorder bonuses, featuring exclusive supercars, custom weapon skins, luxury properties, and a mysterious "Vice City Legends" story expansion...</p>
+                            </div>
+                            <div class="ml-6 text-right text-xs text-apple-gray min-w-[100px]">
+                                <span class="flex items-center justify-end mb-1"><i class="fa fa-calendar mr-2"></i> September 10, 2025</span>
+                                <span class="flex items-center justify-end"><i class="fa fa-eye mr-1"></i> <span class="count">0</span></span>
+                            </div>
                         </div>
                     </a>
                 </div>
@@ -413,6 +508,7 @@
                 </div>
             </div>
         </section>
+    
 
         <!-- 关于区域 -->
         <section id="about" class="py-16 bg-accent">
@@ -421,13 +517,16 @@
                 
                 <div class="max-w-3xl mx-auto bg-white rounded-2xl p-8 shadow-sm">
                     <p class="text-lg mb-4">
-                        GTA6games.net is your premier destination for playing GTA 6 inspired games online. Our collection features the best fan-made games that capture the essence of the Grand Theft Auto series.
+                        GTA6games.net is your ultimate destination for GTA 6 inspired gaming experience. We offer a curated collection of high-quality fan-made games that capture the excitement and gameplay of the Grand Theft Auto universe.
                     </p>
                     <p class="text-lg mb-4">
-                        All games on our platform are free to play, requiring no downloads or installations. Simply click on any game and start playing instantly in your browser.
+                        Our platform features both GTA 6 inspired games and the latest news about GTA 6 development, providing a comprehensive hub for all GTA 6 enthusiasts.
+                    </p>
+                    <p class="text-lg mb-4">
+                        All games are completely free to play directly in your browser - no downloads or installations required. Simply choose a game and start playing instantly.
                     </p>
                     <p class="text-lg">
-                        We regularly update our collection with new games, so be sure to check back often for the latest additions to our GTA 6 related games library.
+                        We continuously update our game library with new titles and provide up-to-date news coverage to keep you informed about everything related to GTA 6.
                     </p>
                 </div>
             </div>
@@ -468,7 +567,7 @@
     <!-- 页脚 -->
     <footer class="bg-secondary text-white py-12">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
                 <div>
                     <h3 class="text-xl font-semibold mb-4 flex items-center">
                         <img src="images/Gta6games网站图标.png" alt="GTA6games.net" class="h-6 w-6 mr-2">
@@ -481,8 +580,7 @@
                     <h4 class="text-lg font-medium mb-4">Quick Links</h4>
                     <ul class="space-y-2 text-gray-400">
                         <li><a href="/" class="hover:text-primary transition-colors">Home</a></li>
-                        <li><a href="#games" class="hover:text-primary transition-colors">Games</a></li>
-                        <li><a href="#news" class="hover:text-primary transition-colors">GTA6 News</a></li>
+                        <li><a href="#games" class="hover:text-primary transition-colors">Games & News</a></li>
                         <li><a href="#about" class="hover:text-primary transition-colors">About</a></li>
                         <li><a href="#contact" class="hover:text-primary transition-colors">Contact</a></li>
                     </ul>
@@ -500,10 +598,7 @@
                         <a href="games/atv-highway-traffic.html" class="hover:text-primary transition-colors">ATV Highway Traffic</a>
                         <a href="games/storm-city-mafia.html" class="hover:text-primary transition-colors">Storm City Mafia</a>
                     </div>
-                </div>
-                
-
-            </div>
+                    </div>
             
             <div class="border-t border-gray-700 pt-8 text-center text-gray-500 text-sm">
                 <p>&copy; 2025 GTA6games.net. All rights reserved.</p>
@@ -512,8 +607,7 @@
                     <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
                     <a href="#" class="hover:text-primary transition-colors">Cookie Policy</a>
                 </div>
-            </div>
-        </div>
+                    </div>
     </footer>
 
      <script src="js/news-counter.js"></script>
@@ -623,7 +717,7 @@
                      desktopMenu.classList.toggle('bg-white');
                      desktopMenu.classList.toggle('shadow-lg');
                      desktopMenu.classList.toggle('p-4');
-                     desktopMenu.classList.toggle('space-y-4');
+                     desktopMenu.classList.toggle('space-y-3');
                  });
              }
              

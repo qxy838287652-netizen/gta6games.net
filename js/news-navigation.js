@@ -3,7 +3,22 @@ class NewsNavigation {
     constructor() {
         this.newsList = [
             {
-                title: "GTA 6 Officially Delayed to May 2026 - Rockstar Apologizes, Promises Quality First",
+                title: "GTA 6 May Face Further Delay to October 2026 - Industry Insider Suggests Holiday Release Strategy",
+                url: "gta6-further-delay-2026.html",
+                date: "September 18, 2025"
+            },
+            {
+                title: "GTA 6 Set to Become the Largest Game Launch in History - Rockstar Hiring Spree Indicates Massive Scale",
+                url: "gta6-largest-launch.html",
+                date: "September 17, 2025"
+            },
+            {
+                title: "GTA 6 to Feature Revolutionary Advanced Environmental Destruction - 60% of Buildings Can Be Destroyed",
+                url: "gta6-advanced-destruction.html",
+                date: "September 16, 2025"
+            },
+            {
+                title: "GTA 6 Officially Delayed to May 2026 - Rockstar Apologizes, Promises Uncompromising Quality",
                 url: "gta6-delay-2026.html",
                 date: "September 15, 2025"
             },
@@ -100,55 +115,59 @@ class NewsNavigation {
 
     // 初始化
     init() {
-        // 添加上一篇下一篇导航 - 放在新闻内容的最后
-        const newsContent = document.querySelector('div.prose.max-w-none') || document.querySelector('article');
-        
-        if (newsContent) {
-            const navigationHTML = this.createNavigationHTML();
-            newsContent.insertAdjacentHTML('afterend', navigationHTML);
-        } else {
-            // 如果找不到新闻内容容器，直接添加到文章末尾
-            const article = document.querySelector('article');
-            if (article) {
-                const navigationHTML = this.createNavigationHTML();
-                article.insertAdjacentHTML('beforeend', navigationHTML);
-            }
-        }
-        
         // 同步阅读量
         this.syncHomePageViews();
         
+        // 添加上一篇下一篇导航
+        this.addNavigation();
+        
         // 添加移动端优化样式
         this.addMobileStyles();
+    }
+
+    // 添加导航
+    addNavigation() {
+        // 查找新闻内容容器
+        const articleContent = document.querySelector('article .prose');
+        if (articleContent) {
+            // 创建导航HTML
+            const navigationHTML = this.createNavigationHTML();
+            // 插入到文章内容末尾
+            articleContent.insertAdjacentHTML('beforeend', navigationHTML);
+        }
     }
 
     // 添加移动端优化样式
     addMobileStyles() {
         const style = document.createElement('style');
         style.textContent = `
+            /* 导航样式 */
+            .news-navigation {
+                margin-top: 2rem;
+            }
+            
+            .nav-item {
+                transition: all 0.3s ease;
+                border-radius: 0.5rem;
+            }
+            
+            .nav-label {
+                font-weight: 500;
+            }
+            
+            .line-clamp-2 {
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+            
+            .transition-smooth {
+                transition: all 0.3s ease;
+            }
+            
             /* 移动端优化 */
             @media (max-width: 768px) {
-                .news-navigation {
-                    margin-top: 2rem;
-                    padding: 1rem 0;
-                }
-                
-                .news-navigation .nav-item {
-                    padding: 1rem;
-                    margin-bottom: 1rem;
-                    border-radius: 0.75rem;
-                }
-                
-                .news-navigation h4 {
-                    font-size: 0.95rem;
-                    line-height: 1.4;
-                }
-                
-                .news-navigation p.nav-label {
-                    font-size: 0.8rem;
-                    margin-bottom: 0.5rem;
-                }
-                
                 /* 确保图片响应式 */
                 .prose img {
                     max-width: 100%;
@@ -174,19 +193,20 @@ class NewsNavigation {
                 article {
                     padding: 1.5rem !important;
                 }
-            }
-            
-            /* 文本截断 */
-            .line-clamp-2 {
-                display: -webkit-box;
-                -webkit-line-clamp: 2;
-                -webkit-box-orient: vertical;
-                overflow: hidden;
-            }
-            
-            /* 平滑过渡 */
-            .transition-smooth {
-                transition: all 0.3s ease;
+                
+                /* 移动端导航优化 */
+                .news-navigation {
+                    margin-top: 1.5rem;
+                    padding-top: 1.5rem;
+                }
+                
+                .nav-item {
+                    margin-bottom: 1rem;
+                }
+                
+                .nav-item:last-child {
+                    margin-bottom: 0;
+                }
             }
         `;
         document.head.appendChild(style);

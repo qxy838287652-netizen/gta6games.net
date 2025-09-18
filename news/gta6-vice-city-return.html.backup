@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA 6 Confirmed to Return to Vice City - Full Modern Recreation of 1980s Miami</title>
+    <meta name="description" content="Official confirmation that GTA 6 will return to Vice City with a modern recreation of 1980s Miami, featuring expanded map and period-accurate details.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0071e3',
+                        secondary: '#1d1d1f',
+                        accent: '#f5f5f7',
+                        'apple-gray': '#86868b',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* 导航栏按钮悬停效果 */
+        header button {
+            transition: all 0.3s ease;
+        }
+        
+        header button:hover {
+            color: #0071e3;
+            transform: scale(1.1);
+        }
+        
+        /* 引用块样式 */
+        blockquote {
+            border-left: 4px solid #0071e3;
+            background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+        }
+        
+        /* 列表样式 */
+        .feature-list li {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #0071e3;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-accent min-h-screen">
+    <!-- 导航栏 -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <a href="../index.html" class="flex items-center">
+                    <img src="../images/Gta6games网站图标.png" alt="GTA6games.net" class="h-8 w-8 mr-2">
+                    <span class="text-xl font-semibold">GTA6games.net</span>
+                </a>
+                
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <i class="fa fa-bars text-2xl"></i>
+                </button>
+                
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html" class="text-apple-gray hover:text-primary">Home</a>
+                    <a href="../index.html#games" class="text-apple-gray hover:text-primary">Games</a>
+                    <a href="../index.html#news" class="text-primary font-medium">News</a>
+                    <a href="../index.html#about" class="text-apple-gray hover:text-primary">About</a>
+                    <a href="../index.html#contact" class="text-apple-gray hover:text-primary">Contact</a>
+                </nav>
+            </div>
+            
+            <!-- 移动端导航菜单 -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white absolute top-full left-0 right-0 shadow-lg">
+                <div class="container mx-auto px-4 py-4 space-y-4">
+                    <a href="../index.html" class="block py-2 text-apple-gray hover:text-primary">Home</a>
+                    <a href="../index.html#games" class="block py-2 text-apple-gray hover:text-primary">Games</a>
+                    <a href="../index.html#news" class="block py-2 text-primary font-medium">News</a>
+                    <a href="../index.html#about" class="block py-2 text-apple-gray hover:text-primary">About</a>
+                    <a href="../index.html#contact" class="block py-2 text-apple-gray hover:text-primary">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 新闻内容 -->
+    <main class="container mx-auto px-4 py-12 max-w-4xl">
+        <article class="bg-white rounded-2xl shadow-sm p-8">
+            <!-- 新闻标题和元信息 -->
+            <div class="text-center mb-8">
+                <h1 class="text-[clamp(1.8rem,4vw,2.8rem)] font-bold mb-4">GTA 6 Confirmed to Return to Vice City - Full Modern Recreation of 1980s Miami</h1>
+                <div class="flex items-center justify-center space-x-6 text-apple-gray">
+                    <span class="flex items-center"><i class="fa fa-calendar mr-2"></i> September 12, 2025</span>
+                    <span class="flex items-center"><i class="fa fa-eye mr-1"></i> <span id="view-count">0</span></span>
+                    <span class="flex items-center"><i class="fa fa-clock mr-2"></i> 7 min read</span>
+                </div>
+            </div>
+            
+
+            
+            <!-- 新闻正文 -->
+            <div class="prose max-w-none">
+                <p class="text-lg mb-6">
+                    In a groundbreaking announcement, Rockstar Games has officially confirmed that Grand Theft Auto 6 will return to the iconic Vice City setting, bringing players back to the neon-drenched streets of 1980s Miami in a completely reimagined and massively expanded form.
+                </p>
+                
+                <p class="text-lg mb-6">
+                    The new Vice City is described as the most detailed and authentic recreation of 1980s Miami ever created in a video game. The map will be approximately 3-4 times larger than the original Vice City, encompassing not just the city itself but also surrounding areas including the Florida Everglades, the Florida Keys, and various suburban developments.
+                </p>
+                
+                <blockquote class="border-l-4 border-primary pl-6 py-4 my-8 bg-accent rounded-r-xl">
+                    <p class="text-xl font-semibold text-secondary">"Returning to Vice City has been a dream of ours for years. With modern technology, we can finally do justice to the vision we had back in 2002 - a living, breathing 1980s Miami that feels authentic in every detail."</p>
+                    <cite class="block mt-2 text-apple-gray">- Sam Houser, Rockstar Games</cite>
+                </blockquote>
+                
+                <h2 class="text-2xl font-semibold mb-4 mt-8">Key Features of the New Vice City</h2>
+                
+                <ul class="feature-list space-y-3 mb-8">
+                    <li><strong>Expanded Map:</strong> 3-4 times larger than original Vice City with diverse environments</li>
+                    <li><strong>Period Accuracy:</strong> Meticulously researched 1980s architecture, vehicles, and fashion</li>
+                    <li><strong>Dynamic Weather:</strong> Realistic Florida weather patterns including tropical storms</li>
+                    <li><strong>Enhanced Water Physics:</strong> Advanced ocean and wave simulation for realistic beaches</li>
+                    <li><strong>Cultural Authenticity:</strong> Faithful recreation of 1980s Miami culture and atmosphere</li>
+                </ul>
+                
+                <p class="text-lg mb-6">
+                    The game will feature an extensive soundtrack curated to capture the essence of 1980s music, with multiple radio stations covering everything from new wave and synth-pop to hip-hop and classic rock. The soundtrack is reportedly one of the largest ever assembled for a video game, with hundreds of licensed tracks.
+                </p>
+                
+                <h2 class="text-2xl font-semibold mb-4 mt-8">Technological Advancements</h2>
+                
+                <p class="text-lg mb-6">
+                    Rockstar's RAGE engine has been completely overhauled to handle the unique challenges of recreating 1980s Miami. Advanced lighting systems recreate the distinctive neon glow of the era, while new material rendering technology accurately depicts everything from art deco architecture to vintage car paint.
+                </p>
+                
+                <p class="text-lg mb-6">
+                    The team has employed photogrammetry and historical research to ensure architectural accuracy. Many real-life Miami landmarks from the 1980s have been recreated, though with fictionalized names to maintain the series' satirical tone.
+                </p>
+                
+                <div class="bg-primary/10 p-6 rounded-xl mb-8">
+                    <h3 class="text-lg font-semibold mb-3 text-primary">Gameplay Innovations</h3>
+                    <ul class="space-y-2">
+                        <li>• Period-accurate vehicle handling and physics</li>
+                        <li>• 1980s-themed missions and activities</li>
+                        <li>• Expanded underwater exploration</li>
+                        <li>• Dynamic drug trade economy system</li>
+                        <li>• Enhanced social interactions with period dialogue</li>
+                    </ul>
+                </div>
+                
+                <p class="text-lg mb-6">
+                    The return to Vice City represents a significant departure from the modern settings of recent GTA titles. Rockstar has emphasized that this isn't just a nostalgia play - it's an opportunity to explore a specific time period with the depth and detail that modern technology allows.
+                </p>
+                
+                <p class="text-lg">
+                    Fans of the series have been clamoring for a return to Vice City for years, and this confirmation has generated enormous excitement. The combination of Rockstar's storytelling prowess with the rich cultural backdrop of 1980s Miami promises to deliver one of the most memorable gaming experiences of the decade.
+                </p>
+            </div>
+            
+
+        </article>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-secondary text-white py-12 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <img src="../images/Gta6games网站图标.png" alt="GTA6games.net" class="h-6 w-6 mr-2">
+                        GTA6games.net
+                    </h3>
+                    <p class="text-gray-400">The best place to play GTA 6 inspired games online for free.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="../index.html#games" class="text-gray-400 hover:text-white transition-colors">Games</a></li>
+                        <li><a href="../index.html#news" class="text-gray-400 hover:text-white transition-colors">News</a></li>
+                        <li><a href="../index.html#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="../privacy.html" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="../terms.html" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2025 GTA6games.net. All rights reserved. This website is not affiliated with Rockstar Games or Take-Two Interactive.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/news-counter.js"></script>
+    <script src="../js/news-navigation.js"></script>
+    
+    <script>
+        // 移动端菜单功能
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // 页面加载时初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 初始化阅读量计数器
+            if (typeof initializeViewCounter === 'function') {
+                initializeViewCounter('gta6-vice-city-return.html');
+            }
+            
+            // 初始化新闻导航
+            if (typeof initializeNewsNavigation === 'function') {
+                initializeNewsNavigation();
+            }
+        });
+    </script>
+</body>
+</html>
