@@ -135,9 +135,15 @@ class NewsNavigation {
         return html;
     }
 
-    // 兼容性增强：找不到 .prose 时回退到 article 容器
+    // 兼容性增强：找不到 .prose 时多级回退，确保移动端也能挂载
     getContentContainer() {
-        return document.querySelector('article .prose') || document.querySelector('article');
+        return (
+            document.querySelector('article .prose') ||
+            document.querySelector('article') ||
+            document.querySelector('main.container') ||
+            document.querySelector('main') ||
+            document.body
+        );
     }
 
     // 同步首页阅读量
@@ -160,13 +166,22 @@ class NewsNavigation {
         this.addMobileStyles();
     }
 
-    // 添加导航
+    // 添加导航（防重复插入，确保可见）
     addNavigation() {
-        // 查找新闻内容容器
+        // 避免重复
+        if (document.querySelector('.news-navigation')) return;
+
         const articleContent = this.getContentContainer();
         if (articleContent) {
             const navigationHTML = this.createNavigationHTML();
             articleContent.insertAdjacentHTML('beforeend', navigationHTML);
+
+            // 可见性保障：若父级有 overflow 或样式干扰，给导航加清除
+            const navEl = document.querySelector('.news-navigation');
+            if (navEl) {
+                navEl.style.clear = 'both';
+                navEl.style.display = 'block';
+            }
         }
     }
 

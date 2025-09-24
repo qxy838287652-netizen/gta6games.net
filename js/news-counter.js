@@ -6,10 +6,13 @@ class NewsCounter {
     }
 
     init() {
-        // 监听新闻链接点击
+        // 先做一次历史数据规范化迁移，避免多种URL形式导致的键不一致
+        this.normalizeStorage();
+
+        // 监听新闻链接点击（首页与其它页面通用）
         document.addEventListener('click', (e) => {
-            const newsLink = e.target.closest('a[href*="news/"]');
-            if (newsLink && newsLink.href.includes('.html')) {
+            const newsLink = e.target.closest('a[href*=".html"]');
+            if (newsLink) {
                 this.incrementClick(newsLink.href);
             }
         });
@@ -41,31 +44,53 @@ class NewsCounter {
     }
 
     getNewsKey(url) {
-        // 从URL中提取新闻文件名
-        const match = url.match(/news\/([^/]+\.html)/);
-        return match ? match[1] : url;
+        return this.normalizeKey(url);
+    }
+
+    // 统一把各种URL形式折叠为“文件名.html”
+    normalizeKey(url) {
+        try {
+            // 去掉查询串和hash
+            const clean = url.split('#')[0].split('?')[0];
+            // 取最后一个/后的部分
+            const file = clean.substring(clean.lastIndexOf('/') + 1);
+            return file || clean;
+        } catch {
+            return url;
+        }
+    }
+
+    // 迁移已有localStorage数据到统一键（文件名）上，合并累加后写回
+    normalizeStorage() {
+        const raw = this.getClicks();
+        const merged = {};
+        Object.entries(raw).forEach(([k, v]) => {
+            const nk = this.normalizeKey(k);
+            merged[nk] = (merged[nk] || 0) + (typeof v === 'number' ? v : 0);
+        });
+        // 仅当有变化时写回，避免无谓写入
+        const changed = JSON.stringify(raw) !== JSON.stringify(merged);
+        if (changed) {
+            localStorage.setItem(this.storageKey, JSON.stringify(merged));
+        }
     }
 
     updateClickCounts() {
         const clicks = this.getClicks();
-        const newsLinks = document.querySelectorAll('a[href*="news/"]');
+        // 首页/其它位置可能使用相对或绝对URL，统一匹配所有指向 .html 的链接
+        const newsLinks = document.querySelectorAll('a[href*=".html"]');
         
         newsLinks.forEach(link => {
-            if (link.href.includes('.html')) {
-                const newsKey = this.getNewsKey(link.href);
-                const count = clicks[newsKey] || 0;
-                
-                // 更新点击计数显示 - 修复选择器问题
-                const eyeIcon = link.querySelector('.fa-eye');
-                if (eyeIcon) {
-                    // 找到包含数字的span元素
-                    const countSpan = eyeIcon.nextElementSibling;
-                    if (countSpan && countSpan.textContent !== undefined) {
-                        // 格式化数字显示
-                        const formattedCount = this.formatCount(count);
-                        countSpan.textContent = formattedCount;
-                    }
-                }
+            const href = link.href;
+            if (!href) return;
+            const newsKey = this.getNewsKey(href);
+            const count = clicks[newsKey] || 0;
+
+            // 更新点击计数显示
+            const eyeIcon = link.querySelector('.fa-eye');
+            const countSpan = eyeIcon ? eyeIcon.nextElementSibling : null;
+            if (countSpan && countSpan.textContent !== undefined) {
+                countSpan.textContent = this.formatCount(count);
             }
         });
     }
@@ -108,19 +133,16 @@ class NewsCounter {
 
     // 同步首页阅读量到新闻页面
     syncHomePageViews() {
-        const clicks = this.getClicks();
         const currentUrl = window.location.href;
         const currentCount = this.getClickCount(currentUrl);
-        
-        // 更新页面上的阅读量显示
+        // 仅更新当前页面区域内的计数（避免误覆盖其它链接的显示）
         const eyeIcons = document.querySelectorAll('.fa-eye');
         eyeIcons.forEach(eyeIcon => {
             const countSpan = eyeIcon.nextElementSibling;
-            if (countSpan && countSpan.textContent) {
+            if (countSpan && countSpan.textContent !== undefined) {
                 countSpan.textContent = this.formatCount(currentCount);
             }
         });
-        
         return currentCount;
     }
 }
