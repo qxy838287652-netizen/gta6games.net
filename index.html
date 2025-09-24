@@ -22,6 +22,7 @@
     <meta property="og:url" content="https://gta6games.net/">
     <meta property="og:title" content="GTA 6 Games - Play GTA 6 Related Games Online">
     <meta property="og:description" content="Play the best GTA 6 related games online for free. Enjoy GTA simulator, police chase, mob city and burnout drift games on GTA6games.net.">
+    <meta property="og:site_name" content="GTA6games.net">
     <meta property="og:image" content="https://gta6games.net/images/featured-games.jpg">
     
     <!-- Twitter -->
@@ -37,7 +38,7 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "GTA 6 Games",
-      "url": "https://gta6games.net/"
+      "url": "https://gta6games.net/",
       "description": "Play the best GTA 6 related games online for free. Enjoy GTA simulator, police chase, mob city and burnout drift games on GTA6games.net.",
       "publisher": {
         "@type": "Organization",
@@ -82,58 +83,70 @@
     
      <style type="text/tailwindcss">
          @layer utilities {
-             .content-auto {
-                 content-visibility: auto;
-             }
-             .game-card-shadow {
-                 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-             }
-             .game-card-shadow:hover {
-                 box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-             }
-             .news-hidden {
-                 display: none !important;
-             }
-             .game-hidden {
-                 display: none !important;
-             }
-             /* 新闻卡片底部固定样式 */
-             .news-item {
-                 display: flex;
-                 flex-direction: column;
-                 height: 100%;
-             }
-             .news-item > div:last-child {
-                 margin-top: auto;
-             }
-            /* 并排布局调整 */
+             .content-auto { content-visibility: auto; }
+             .news-hidden { display: none !important; }
+             .game-hidden { display: none !important; }
+             .game-card-shadow { box-shadow: 0 4px 20px rgba(0,0,0,.08); }
+             .game-card-shadow:hover { box-shadow: 0 8px 30px rgba(0,0,0,.12); }
+
+             /* 新闻卡片优化：隐藏预览、放大标题、压缩高度与内边距 */
+             .news-item { padding: 0.5rem 0.75rem; min-height: 84px; }
+             @media (min-width: 768px) { .news-item { padding: 0.75rem 1rem; } }
+             .news-item h3 { @apply text-lg md:text-xl leading-snug; margin-bottom: .25rem !important; }
+             .news-item .preview { display: none; }
+             /* 强制隐藏所有摘要段落（稳妥选择器，不影响右侧日期/浏览量） */
+             .news-item p.text-apple-gray.text-xs.mb-3 { display: none !important; }
+
+             /* 并排布局调整 */
             .games-news-grid {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 gap: 2rem;
             }
-            
             @media (max-width: 1024px) {
-                .games-news-grid {
-                    grid-template-columns: 1fr;
-                    gap: 1.5rem;
-                }
-            }
-            
-            /* 调整游戏卡片在并排布局中的尺寸 */
-            @media (min-width: 1024px) {
-                .games-side .game-card {
-                    min-height: 280px;
-                }
-            }
-            
-            /* 确保新闻项目在并排布局中的一致性 */
-            .news-side .news-item {
-                min-height: 140px;
+                .games-news-grid { grid-template-columns: 1fr; gap: 1.5rem; }
             }
 
+            /* 调整游戏卡片在并排布局中的尺寸 */
+            @media (min-width: 1024px) {
+                .games-side .game-card { min-height: 280px; }
+            }
+
+            /* 确保新闻项目在并排布局中的一致性 */
+            .news-side .news-item { min-height: 120px; }
          }
      </style>
+    <!-- Additional Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"BreadcrumbList",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://gta6games.net/"},
+        {"@type":"ListItem","position":2,"name":"Games & News","item":"https://gta6games.net/#news"}
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"SiteNavigationElement",
+      "name":["Home","Games & News","About","Contact"],
+      "url":["https://gta6games.net/","https://gta6games.net/#news","https://gta6games.net/#about","https://gta6games.net/#contact"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"Organization",
+      "name":"GTA6games.net",
+      "url":"https://gta6games.net/",
+      "logo":"https://gta6games.net/images/Gta6games网站图标.png",
+      "sameAs":[
+        "https://gta6games.net/"
+      ]
+    }
+    </script>
 </head>
 <body class="bg-accent text-secondary font-sans">
     <!-- 导航栏 -->
@@ -358,7 +371,7 @@
                         </a>
                     </div>
                 </div>
-                
+
                 <div class="text-center mt-8">
                     <button id="view-more-games" class="inline-flex items-center bg-primary hover:bg-primary/90 text-white font-medium py-2 px-6 rounded-full transition-all transform hover:scale-105 text-sm">
                         View More Games <i class="fa fa-arrow-right ml-2"></i>
@@ -374,6 +387,90 @@
                 
                 <!-- 新闻卡片网格 - 一行2个 -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="news-container">
+                    <!-- New News 2025-09-24 -->
+                    <a href="news/gta6-preorders-and-editions.html" class="block bg-accent rounded-xl p-6 hover:bg-accent/90 transition-all duration-300 news-item border-l-4 border-primary">
+                        <div class="flex items-start justify-between">
+                            <div class="flex-1">
+                                <h3 class="text-base font-semibold mb-2">GTA 6 Pre-orders Tipped For November: Standard, Deluxe, Ultimate Editions</h3>
+                                <p class="preview text-apple-gray text-xs mb-3">Retail trackers point to multiple editions and early online perks, with cosmetics and physical bundles rumored for consoles...</p>
+                            </div>
+                            <div class="ml-6 text-right text-xs text-apple-gray min-w-[100px]">
+                                <span class="flex items-center justify-end mb-1"><i class="fa fa-calendar mr-2"></i> September 24, 2025</span>
+                                <span class="flex items-center justify-end"><i class="fa fa-eye mr-1"></i> <span class="count">0</span></span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- New News 2025-09-23 -->
+                    <a href="news/gta6-trailer-2-october-rumor.html" class="block bg-accent rounded-xl p-6 hover:bg-accent/90 transition-all duration-300 news-item border-l-4 border-primary">
+                        <div class="flex items-start justify-between">
+                            <div class="flex-1">
+                                <h3 class="text-base font-semibold mb-2">GTA 6 Story Trailer 2 Rumored For October Reveal</h3>
+                                <p class="text-apple-gray text-xs mb-3">Marketing schedules and retail asset updates suggest Rockstar is lining up a second story trailer in October focusing on narrative...</p>
+                            </div>
+                            <div class="ml-6 text-right text-xs text-apple-gray min-w-[100px]">
+                                <span class="flex items-center justify-end mb-1"><i class="fa fa-calendar mr-2"></i> September 23, 2025</span>
+                                <span class="flex items-center justify-end"><i class="fa fa-eye mr-1"></i> <span class="count">0</span></span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- New News 2025-09-22 -->
+                    <a href="news/gta6-soundtrack-ai-radio.html" class="block bg-accent rounded-xl p-6 hover:bg-accent/90 transition-all duration-300 news-item border-l-4 border-primary">
+                        <div class="flex items-start justify-between">
+                            <div class="flex-1">
+                                <h3 class="text-base font-semibold mb-2">GTA 6 Soundtrack: Licensed Classics And AI-Enhanced Dynamic Radio</h3>
+                                <p class="text-apple-gray text-xs mb-3">Reports suggest AI-assisted DJ chatter and context-aware playlists that react to weather, pursuits, and neighborhood...</p>
+                            </div>
+                            <div class="ml-6 text-right text-xs text-apple-gray min-w-[100px]">
+                                <span class="flex items-center justify-end mb-1"><i class="fa fa-calendar mr-2"></i> September 22, 2025</span>
+                                <span class="flex items-center justify-end"><i class="fa fa-eye mr-1"></i> <span class="count">0</span></span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- New News 2025-09-21 -->
+                    <a href="news/gta6-performance-targets.html" class="block bg-accent rounded-xl p-6 hover:bg-accent/90 transition-all duration-300 news-item border-l-4 border-primary">
+                        <div class="flex items-start justify-between">
+                            <div class="flex-1">
+                                <h3 class="text-base font-semibold mb-2">GTA 6 Performance Targets: 60 FPS With Ray Tracing On Next-Gen Consoles</h3>
+                                <p class="text-apple-gray text-xs mb-3">Insiders claim consoles will offer RT performance modes while PC features granular presets and modern upscalers...</p>
+                            </div>
+                            <div class="ml-6 text-right text-xs text-apple-gray min-w-[100px]">
+                                <span class="flex items-center justify-end mb-1"><i class="fa fa-calendar mr-2"></i> September 21, 2025</span>
+                                <span class="flex items-center justify-end"><i class="fa fa-eye mr-1"></i> <span class="count">0</span></span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- New News 2025-09-20 -->
+                    <a href="news/gta6-ai-npc-system.html" class="block bg-accent rounded-xl p-6 hover:bg-accent/90 transition-all duration-300 news-item border-l-4 border-primary">
+                        <div class="flex items-start justify-between">
+                            <div class="flex-1">
+                                <h3 class="text-base font-semibold mb-2">Rockstar Teases Next-Gen NPC AI: Memory, Routines, And Reactive Crowds</h3>
+                                <p class="text-apple-gray text-xs mb-3">Rumored AI system gives NPCs persistent memory, daily schedules, and city-level crowd behavior with cascading reactions...</p>
+                            </div>
+                            <div class="ml-6 text-right text-xs text-apple-gray min-w-[100px]">
+                                <span class="flex items-center justify-end mb-1"><i class="fa fa-calendar mr-2"></i> September 20, 2025</span>
+                                <span class="flex items-center justify-end"><i class="fa fa-eye mr-1"></i> <span class="count">0</span></span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- New News 2025-09-19 -->
+                    <a href="news/gta6-map-size-expansion.html" class="block bg-accent rounded-xl p-6 hover:bg-accent/90 transition-all duration-300 news-item border-l-4 border-primary">
+                        <div class="flex items-start justify-between">
+                            <div class="flex-1">
+                                <h3 class="text-base font-semibold mb-2">GTA 6 Map Leak: 2x GTA 5 Size With Dynamic Region Expansion</h3>
+                                <p class="text-apple-gray text-xs mb-3">Compiled developer map tiles suggest a world roughly twice GTA 5 at launch with expansion-ready districts...</p>
+                            </div>
+                            <div class="ml-6 text-right text-xs text-apple-gray min-w-[100px]">
+                                <span class="flex items-center justify-end mb-1"><i class="fa fa-calendar mr-2"></i> September 19, 2025</span>
+                                <span class="flex items-center justify-end"><i class="fa fa-eye mr-1"></i> <span class="count">0</span></span>
+                            </div>
+                        </div>
+                    </a>
+
                     <!-- News Item 1 - Further Delay -->
                     <a href="news/gta6-further-delay-2026.html" class="block bg-accent rounded-xl p-6 hover:bg-accent/90 transition-all duration-300 news-item border-l-4 border-primary">
                         <div class="flex items-start justify-between">

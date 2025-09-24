@@ -3,6 +3,36 @@ class NewsNavigation {
     constructor() {
         this.newsList = [
             {
+                title: "GTA 6 Pre-orders Tipped For November: Standard, Deluxe, Ultimate Editions",
+                url: "gta6-preorders-and-editions.html",
+                date: "September 24, 2025"
+            },
+            {
+                title: "GTA 6 Story Trailer 2 Rumored For October Reveal",
+                url: "gta6-trailer-2-october-rumor.html",
+                date: "September 23, 2025"
+            },
+            {
+                title: "GTA 6 Soundtrack: Licensed Classics And AI-Enhanced Dynamic Radio",
+                url: "gta6-soundtrack-ai-radio.html",
+                date: "September 22, 2025"
+            },
+            {
+                title: "GTA 6 Performance Targets: 60 FPS With Ray Tracing On Next-Gen Consoles",
+                url: "gta6-performance-targets.html",
+                date: "September 21, 2025"
+            },
+            {
+                title: "Rockstar Teases Next-Gen NPC AI: Memory, Routines, And Reactive Crowds",
+                url: "gta6-ai-npc-system.html",
+                date: "September 20, 2025"
+            },
+            {
+                title: "GTA 6 Map Leak: 2x GTA 5 Size With Dynamic Region Expansion",
+                url: "gta6-map-size-expansion.html",
+                date: "September 19, 2025"
+            },
+            {
                 title: "GTA 6 May Face Further Delay to October 2026 - Industry Insider Suggests Holiday Release Strategy",
                 url: "gta6-further-delay-2026.html",
                 date: "September 18, 2025"
@@ -105,6 +135,11 @@ class NewsNavigation {
         return html;
     }
 
+    // 兼容性增强：找不到 .prose 时回退到 article 容器
+    getContentContainer() {
+        return document.querySelector('article .prose') || document.querySelector('article');
+    }
+
     // 同步首页阅读量
     syncHomePageViews() {
         if (typeof newsCounter !== 'undefined') {
@@ -128,11 +163,9 @@ class NewsNavigation {
     // 添加导航
     addNavigation() {
         // 查找新闻内容容器
-        const articleContent = document.querySelector('article .prose');
+        const articleContent = this.getContentContainer();
         if (articleContent) {
-            // 创建导航HTML
             const navigationHTML = this.createNavigationHTML();
-            // 插入到文章内容末尾
             articleContent.insertAdjacentHTML('beforeend', navigationHTML);
         }
     }

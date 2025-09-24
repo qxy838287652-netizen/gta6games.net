@@ -112,4 +112,33 @@ header button:hover {
   .game-card {
     min-height: 200px;
   }
+
+  /* 首页 Latest GTA 6 News 移动端优化 */
+  #news-container .news-item {
+    padding: 1rem !important; /* p-4 */
+  }
+  #news-container h3 {
+    font-size: 0.95rem !important;
+    line-height: 1.35 !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* 标题两行 */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  #news-container p {
+    font-size: 0.8rem !important;
+    line-height: 1.4 !important;
+    color: #6b7280 !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* 摘要两行 */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  #news-container .min-w-\[100px\] {
+    min-width: 84px !important;
+  }
+  /* 时间/阅读量区域更紧凑 */
+  #news-container .text-right.text-xs {
+    font-size: 0.72rem !important;
+  }
 }
