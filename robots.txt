@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://www.gta6games.net/sitemap.xml
+Sitemap: https://gta6games.net/sitemap.xml

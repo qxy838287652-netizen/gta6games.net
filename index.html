@@ -16,6 +16,7 @@
     <meta name="description" content="Play the best GTA 6 related games online for free. Enjoy GTA simulator, police chase, mob city and burnout drift games on GTA6games.net.">
     <link rel="icon" type="image/png" href="images/Gta6games网站图标.png">
     <link rel="canonical" href="https://gta6games.net/">
+    <link rel="alternate" hreflang="en-US" href="https://gta6games.net/">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -31,6 +32,14 @@
     <meta property="twitter:title" content="GTA 6 Games - Play GTA 6 Related Games Online">
     <meta property="twitter:description" content="Play the best GTA 6 related games online for free. Enjoy GTA simulator, police chase, mob city and burnout drift games on GTA6games.net.">
     <meta property="twitter:image" content="https://gta6games.net/images/featured-games.jpg">
+    <meta property="og:locale" content="en_US">
+    <meta name="robots" content="index,follow">
+    <link rel="sitemap" type="application/xml" href="sitemap.xml">
+    <link rel="prefetch" href="news/gta6-community-mod-showcase.html">
+    <link rel="prefetch" href="news/gta6-roleplay-server-vicecity.html">
+    <link rel="prefetch" href="news/gta6-speedrun-record-broken.html">
+    <link rel="prefetch" href="news/gta6-photo-contest-winners.html">
+    <link rel="prefetch" href="news/gta6-modded-car-meet.html">
     
     <!-- 结构化数据 -->
     <script type="application/ld+json">
@@ -54,12 +63,26 @@
     <!-- Preload critical resources -->
     <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" as="style">
+    <!-- Connection hints for faster CDN negotiation -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <!-- Analytics domains for faster handshake -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <!-- Preload hero background image to improve LCP -->
+    <link rel="preload" href="images/bg.png" as="image" fetchpriority="high">
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Preload Font Awesome for faster first paint with noscript fallback -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet"></noscript>
     
     <!-- Tailwind 配置 - 苹果风格配色 -->
     <script>
@@ -153,7 +176,7 @@
     <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-sm shadow-sm transition-all duration-300">
         <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
             <a href="/" class="flex items-center space-x-2">
-                <img src="images/Gta6games网站图标.png" alt="GTA6games.net" class="h-8 w-8">
+                <img src="images/Gta6games网站图标.png" alt="GTA6games.net" class="h-8 w-8" width="32" height="32" decoding="async">
                 <span class="text-xl font-semibold tracking-tight">GTA6games.net</span>
             </a>
             
@@ -384,9 +407,164 @@
         <section id="news" class="py-16 bg-accent">
             <div class="container mx-auto px-4">
                 <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-12 text-center">Latest GTA 6 News</h2>
+                <script type="application/ld+json">
+                {
+                  "@context": "https://schema.org",
+                  "@type": "ItemList",
+                  "name": "Latest GTA 6 News",
+                  "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Community Mod Showcase: Neon Overhaul, Smarter Traffic, Fan Radio Packs", "url": "https://gta6games.net/news/gta6-community-mod-showcase.html" },
+                    { "@type": "ListItem", "position": 2, "name": "Fan Roleplay Server Booms: Vice City Life With Player-Run Businesses", "url": "https://gta6games.net/news/gta6-roleplay-server-vicecity.html" },
+                    { "@type": "ListItem", "position": 3, "name": "Speedrunner Smashes Any%: Storm RNG + Traffic Tech Save Minutes", "url": "https://gta6games.net/news/gta6-speedrun-record-broken.html" },
+                    { "@type": "ListItem", "position": 4, "name": "Community Photo Contest Winners: Neon Nights, Rainy Streets, Sun & Sand", "url": "https://gta6games.net/news/gta6-photo-contest-winners.html" },
+                    { "@type": "ListItem", "position": 5, "name": "Modded Car Meet Draws Hundreds: Drift Battles, Photo Lines, Raffles", "url": "https://gta6games.net/news/gta6-modded-car-meet.html" },
+                    { "@type": "ListItem", "position": 6, "name": "Rockstar Updates GTA 6 Official Site: New Screenshots, Pre-order Tease", "url": "https://gta6games.net/news/gta6-official-site-update.html" },
+                    { "@type": "ListItem", "position": 7, "name": "GTA 6 Cross-Progression Rumor: Cloud Saves Across Console and PC", "url": "https://gta6games.net/news/gta6-cross-progression-and-cloud-saves.html" },
+                    { "@type": "ListItem", "position": 8, "name": "GTA 6 Photo Mode Deep Dive: Dynamic Lighting, Presets, and One-Tap Sharing", "url": "https://gta6games.net/news/gta6-photo-mode-and-social-sharing.html" }
+                  ]
+                }
+                </script>
                 
                 <!-- 新闻卡片网格 - 一行2个 -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="news-container">
+                    <!-- Community News 2025-10-09 -->
+                    <a href="news/gta6-community-mod-showcase.html" class="block bg-accent rounded-xl p-6 hover:bg-accent/90 transition-all duration-300 news-item border-l-4 border-primary">
+                        <div class="flex items-start justify-between">
+                            <div class="flex-1">
+                                <h3 class="text-base font-semibold mb-2">Neon Overhaul and Smarter Streets: The Mod Pack Everyone's Installing This Week</h3>
+                                <p class="preview text-apple-gray text-xs mb-3">Fan-made visuals, traffic brains, and radio vibes—tap to see the builds that changed the city overnight.</p>
+                            </div>
+                            <div class="ml-6 text-right text-xs text-apple-gray min-w-[100px]">
+                                <span class="flex items-center justify-end mb-1"><i class="fa fa-calendar mr-2"></i> October 9, 2025</span>
+                                <span class="flex items-center justify-end"><i class="fa fa-eye mr-1"></i> <span class="count">0</span></span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Community News 2025-10-09 -->
+                    <a href="news/gta6-roleplay-server-vicecity.html" class="block bg-accent rounded-xl p-6 hover:bg-accent/90 transition-all duration-300 news-item border-l-4 border-primary">
+                        <div class="flex items-start justify-between">
+                            <div class="flex-1">
+                                <h3 class="text-base font-semibold mb-2">Vice City RP Is Exploding: Player-Run Cafés, Clubs, and Garage Rescues</h3>
+                                <p class="preview text-apple-gray text-xs mb-3">Late-night drama, tiny scandals, and neighbors you’ll root for—join the server everyone’s talking about.</p>
+                            </div>
+                            <div class="ml-6 text-right text-xs text-apple-gray min-w-[100px]">
+                                <span class="flex items-center justify-end mb-1"><i class="fa fa-calendar mr-2"></i> October 9, 2025</span>
+                                <span class="flex items-center justify-end"><i class="fa fa-eye mr-1"></i> <span class="count">0</span></span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Community News 2025-10-08 -->
+                    <a href="news/gta6-speedrun-record-broken.html" class="block bg-accent rounded-xl p-6 hover:bg-accent/90 transition-all duration-300 news-item border-l-4 border-primary">
+                        <div class="flex items-start justify-between">
+                            <div class="flex-1">
+                                <h3 class="text-base font-semibold mb-2">Any% Record Shattered: How Storm RNG and Traffic Tech Turned Minutes Into Seconds</h3>
+                                <p class="preview text-apple-gray text-xs mb-3">Route notes, gear debates, and the ‘trained luck’ that made this run feel inevitable.</p>
+                            </div>
+                            <div class="ml-6 text-right text-xs text-apple-gray min-w-[100px]">
+                                <span class="flex items-center justify-end mb-1"><i class="fa fa-calendar mr-2"></i> October 8, 2025</span>
+                                <span class="flex items-center justify-end"><i class="fa fa-eye mr-1"></i> <span class="count">0</span></span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Community News 2025-10-07 -->
+                    <a href="news/gta6-photo-contest-winners.html" class="block bg-accent rounded-xl p-6 hover:bg-accent/90 transition-all duration-300 news-item border-l-4 border-primary">
+                        <div class="flex items-start justify-between">
+                            <div class="flex-1">
+                                <h3 class="text-base font-semibold mb-2">Photo Contest Winners: Neon Nights, Rainy Streets, and Sun & Sand—Why These Frames Won</h3>
+                                <p class="preview text-apple-gray text-xs mb-3">Color that breathes, depth that tells a story—steal the creators’ three rules.</p>
+                            </div>
+                            <div class="ml-6 text-right text-xs text-apple-gray min-w-[100px]">
+                                <span class="flex items-center justify-end mb-1"><i class="fa fa-calendar mr-2"></i> October 7, 2025</span>
+                                <span class="flex items-center justify-end"><i class="fa fa-eye mr-1"></i> <span class="count">0</span></span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Community News 2025-10-06 -->
+                    <a href="news/gta6-modded-car-meet.html" class="block bg-accent rounded-xl p-6 hover:bg-accent/90 transition-all duration-300 news-item border-l-4 border-primary">
+                        <div class="flex items-start justify-between">
+                            <div class="flex-1">
+                                <h3 class="text-base font-semibold mb-2">Modded Car Meet Turns Night Into a Party: Drift Battles, Photo Lines, Charity Raffles</h3>
+                                <p class="preview text-apple-gray text-xs mb-3">Clean arcs over smoke, crowd flow that just works—see the tricks that kept the chaos fun.</p>
+                            </div>
+                            <div class="ml-6 text-right text-xs text-apple-gray min-w-[100px]">
+                                <span class="flex items-center justify-end mb-1"><i class="fa fa-calendar mr-2"></i> October 6, 2025</span>
+                                <span class="flex items-center justify-end"><i class="fa fa-eye mr-1"></i> <span class="count">0</span></span>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- New News 2025-10-09 -->
+                    <a href="news/gta6-official-site-update.html" class="block bg-accent rounded-xl p-6 hover:bg-accent/90 transition-all duration-300 news-item border-l-4 border-primary">
+                        <div class="flex items-start justify-between">
+                            <div class="flex-1">
+                                <h3 class="text-base font-semibold mb-2">Rockstar Updates GTA 6 Official Site: New Screenshots, Pre-order Tease</h3>
+                                <p class="preview text-apple-gray text-xs mb-3">Subtle site refresh adds visuals and countdown-style UI—fueling November pre-order speculation...</p>
+                            </div>
+                            <div class="ml-6 text-right text-xs text-apple-gray min-w-[100px]">
+                                <span class="flex items-center justify-end mb-1"><i class="fa fa-calendar mr-2"></i> October 9, 2025</span>
+                                <span class="flex items-center justify-end"><i class="fa fa-eye mr-1"></i> <span class="count">0</span></span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- New News 2025-10-08 -->
+                    <a href="news/gta6-cross-progression-and-cloud-saves.html" class="block bg-accent rounded-xl p-6 hover:bg-accent/90 transition-all duration-300 news-item border-l-4 border-primary">
+                        <div class="flex items-start justify-between">
+                            <div class="flex-1">
+                                <h3 class="text-base font-semibold mb-2">GTA 6 Cross-Progression Rumor: Cloud Saves Across Console and PC</h3>
+                                <p class="preview text-apple-gray text-xs mb-3">Social Club identity appears to unify saves; switch freely between platforms without losing progress...</p>
+                            </div>
+                            <div class="ml-6 text-right text-xs text-apple-gray min-w-[100px]">
+                                <span class="flex items-center justify-end mb-1"><i class="fa fa-calendar mr-2"></i> October 8, 2025</span>
+                                <span class="flex items-center justify-end"><i class="fa fa-eye mr-1"></i> <span class="count">0</span></span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- New News 2025-10-07 -->
+                    <a href="news/gta6-photo-mode-and-social-sharing.html" class="block bg-accent rounded-xl p-6 hover:bg-accent/90 transition-all duration-300 news-item border-l-4 border-primary">
+                        <div class="flex items-start justify-between">
+                            <div class="flex-1">
+                                <h3 class="text-base font-semibold mb-2">GTA 6 Photo Mode Deep Dive: Dynamic Lighting, Presets, and One-Tap Sharing</h3>
+                                <p class="preview text-apple-gray text-xs mb-3">Scene-aware presets, depth tools, and Social Club share pipelines give creators new toys...</p>
+                            </div>
+                            <div class="ml-6 text-right text-xs text-apple-gray min-w-[100px]">
+                                <span class="flex items-center justify-end mb-1"><i class="fa fa-calendar mr-2"></i> October 7, 2025</span>
+                                <span class="flex items-center justify-end"><i class="fa fa-eye mr-1"></i> <span class="count">0</span></span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- New News 2025-10-06 -->
+                    <a href="news/gta6-dynamic-weather-and-events.html" class="block bg-accent rounded-xl p-6 hover:bg-accent/90 transition-all duration-300 news-item border-l-4 border-primary">
+                        <div class="flex items-start justify-between">
+                            <div class="flex-1">
+                                <h3 class="text-base font-semibold mb-2">GTA 6 Dynamic Weather: City Events React To Storms, Heatwaves, and Rush Hours</h3>
+                                <p class="preview text-apple-gray text-xs mb-3">Systems touch traffic, crowds, and police routing—changing mission routes and chase logic...</p>
+                            </div>
+                            <div class="ml-6 text-right text-xs text-apple-gray min-w-[100px]">
+                                <span class="flex items-center justify-end mb-1"><i class="fa fa-calendar mr-2"></i> October 6, 2025</span>
+                                <span class="flex items-center justify-end"><i class="fa fa-eye mr-1"></i> <span class="count">0</span></span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- New News 2025-10-05 -->
+                    <a href="news/gta6-pc-features-and-mod-policy.html" class="block bg-accent rounded-xl p-6 hover:bg-accent/90 transition-all duration-300 news-item border-l-4 border-primary">
+                        <div class="flex items-start justify-between">
+                            <div class="flex-1">
+                                <h3 class="text-base font-semibold mb-2">GTA 6 PC Feature Hints: Upscalers, Frame Gen, and A Clearer Mod Policy</h3>
+                                <p class="preview text-apple-gray text-xs mb-3">Granular upscaler tiers, frame gen options, and friendlier solo mod stance rumored for PC launch...</p>
+                            </div>
+                            <div class="ml-6 text-right text-xs text-apple-gray min-w-[100px]">
+                                <span class="flex items-center justify-end mb-1"><i class="fa fa-calendar mr-2"></i> October 5, 2025</span>
+                                <span class="flex items-center justify-end"><i class="fa fa-eye mr-1"></i> <span class="count">0</span></span>
+                            </div>
+                        </div>
+                    </a>
                     <!-- New News 2025-09-24 -->
                     <a href="news/gta6-preorders-and-editions.html" class="block bg-accent rounded-xl p-6 hover:bg-accent/90 transition-all duration-300 news-item border-l-4 border-primary">
                         <div class="flex items-start justify-between">
@@ -667,7 +845,7 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
                 <div>
                     <h3 class="text-xl font-semibold mb-4 flex items-center">
-                        <img src="images/Gta6games网站图标.png" alt="GTA6games.net" class="h-6 w-6 mr-2">
+                        <img src="images/Gta6games网站图标.png" alt="GTA6games.net" class="h-6 w-6 mr-2" width="24" height="24" loading="lazy" decoding="async">
                         GTA6games.net
                     </h3>
                     <p class="text-gray-400">The best place to play GTA 6 inspired games online for free.</p>
@@ -707,8 +885,28 @@
                     </div>
     </footer>
 
-     <script src="js/news-counter.js"></script>
+     <script src="js/news-counter.js" defer></script>
+     <script src="js/news-navigation.js" defer></script>
      <script>
+         // 主页新闻按日期降序排序（在分页前执行）
+         document.addEventListener('DOMContentLoaded', function() {
+             const container = document.getElementById('news-container');
+             if (!container) return;
+             const items = Array.from(container.querySelectorAll('.news-item'));
+             const parseDate = (el) => {
+                 const dateSpan = el.querySelector('.fa-calendar')?.parentElement;
+                 if (!dateSpan) return 0;
+                 const txt = dateSpan.textContent.replace(/\s+/g, ' ').trim();
+                 // 文本格式示例: "September 24, 2025" / "October 9, 2025"
+                 const m = txt.match(/([A-Za-z]+)\s+(\d{1,2}),\s+(\d{4})$/);
+                 if (!m) return 0;
+                 const d = new Date(`${m[1]} ${m[2]}, ${m[3]}`);
+                 return d.getTime() || 0;
+             };
+             items.sort((a, b) => parseDate(b) - parseDate(a));
+             items.forEach(item => container.appendChild(item));
+         });
+
          // 导航栏滚动效果
          window.addEventListener('scroll', function() {
              const header = document.querySelector('header');
